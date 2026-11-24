@@ -1,0 +1,17 @@
+# Private settings (your email for the SEC User-Agent). Never commit.
+.env
+
+# R / RStudio files
+.Rhistory
+.RData
+.Rproj.user/
+
+# Raw SEC downloads (re-create with the download script)
+data/raw/
+
+# Python and macOS clutter (the reused forecast-gap code is Python)
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
