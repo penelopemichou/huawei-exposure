@@ -31,6 +31,21 @@ Every sentence that mentions Huawei or HiSilicon (Huawei's chip unit) gets one l
 
 A sentence labelled *unclear* keeps the firm **out of the donor group until Penelope decides**. It is listed with the sentence.
 
+### Exposure group and dose (decided 25 Nov 2026, before any forecast)
+
+- **Group:** a firm is **exposed** if its FY2018 or FY2019 10-K names Huawei at **10 % or more** of total revenue.
+- **Dose** (how exposed): Huawei's share in the firm's **latest fiscal year that ended before 16 May 2019**, as written in the 10-K. If that year's 10-K gives no percentage for Huawei, the other year's figure is used and marked **"fallback, flagged"**.
+
+### Low exposure, implied (decided 25 Nov 2026)
+
+The firm's FY2018/FY2019 10-K names Huawei as a customer (or licensee) but gives no share, and says no other customer reached 10 %. So the share is below 10 % only by implication.
+
+- These firms are **not donors** and are **not in the primary exposed-vs-donor comparison**.
+- They are shown in **their own rows** and in the **guidance-cut table**. (That table is not defined in this repo yet; Penelope's term, to be specified.)
+- Firms (from B1): MACOM, Skyworks, Broadcom, Qualcomm.
+  - **Qualcomm: royalty income, not product sales.** Huawei pays licence royalties ($600 million in FY2018, $450 million in FY2019), so its "exposure" is of a different kind.
+  - **Skyworks:** Penelope's note "about 12 % of H1 FY2019" may come from a 10-Q; it is not in either 10-K. The 10-Q is proposed as Stage B3.
+
 ## Donor filter (all five must hold; drafted 25 Nov 2026, not applied yet)
 
 1. **Industry:** SEC industry code 3674, 3672, 3677, 3678 or 3679.

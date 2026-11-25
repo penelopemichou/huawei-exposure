@@ -1,0 +1,8 @@
+firm,first_quarter_end,quarters_present_to_origin,quarters_span_to_origin,gaps,20q_rule,last_quarter_end,quarters_after_origin_h1_4,tags_used
+NeoPhotonics,2010-06-30,35,36,1,pass,2022-06-30,4,"RevenueFromContractWithCustomerExcludingAssessedTax, RevenueFromContractWithCustomerIncludingAssessedTax, SalesRevenueGoodsNet"
+Inphi,2010-06-30,35,36,1,pass,2020-12-31,4,"RevenueFromContractWithCustomerExcludingAssessedTax, Revenues"
+Lumentum,2013-09-28,23,23,0,pass,2026-09-26,4,"RevenueFromContractWithCustomerExcludingAssessedTax, RevenueFromContractWithCustomerIncludingAssessedTax, Revenues, SalesRevenueNet"
+Qorvo,2013-06-29,24,24,0,pass,2026-03-28,4,"Revenues, SalesRevenueNet"
+Micron,2008-12-04,39,42,3,pass,2026-09-03,4,"RevenueFromContractWithCustomerExcludingAssessedTax, Revenues, SalesRevenueNet"
+Finisar,2010-08-01,36,36,0,pass,2019-07-28,1,"RevenueFromContractWithCustomerExcludingAssessedTax, Revenues, SalesRevenueNet"
+Intel,2008-06-28,43,44,1,pass,2026-09-26,4,"RevenueFromContractWithCustomerExcludingAssessedTax, SalesRevenueNet"

@@ -109,3 +109,77 @@ Two kinds of rows:
 | Xperi Corp | 3674 | 2019 | 10-K | 2019-12-31 | 2020-02-18 | xper-10k_20191231.htm | https://www.sec.gov/Archives/edgar/data/1690666/000156459020005044/xper-10k_20191231.htm |
 
 (Totals: B1 31, B2 34 documents.)
+
+## B2, revised (25 Nov 2026): three parts, each needs its own "yes"
+
+After the donor screen (`results/donor_screen.csv`), the B2 documents fall into three parts. Sizes are estimates (about 1–8 MB per document); the filing lists of these firms are now saved, so exact filing totals can be shown before the "yes".
+
+### B2a: can decide a donor: 21 documents, 14 firms
+
+| firm | SIC | FY | form | filed | document | url |
+|---|---|---|---|---|---|---|
+| Ambarella Inc | 3674 | 2019 | 10-K | 2019-03-29 | amba-10k_20190131.htm | https://www.sec.gov/Archives/edgar/data/1280263/000156459019010114/amba-10k_20190131.htm |
+| Applied Optoelectronics, Inc. | 3674 | 2019 | 10-K | 2020-02-28 | aaoi20191231_10k.htm | https://www.sec.gov/Archives/edgar/data/1158114/000143774920003909/aaoi20191231_10k.htm |
+| Cree, Inc. | 3674 | 2019 | 10-K | 2019-08-21 | a06302019-10k.htm | https://www.sec.gov/Archives/edgar/data/895419/000089541919000046/a06302019-10k.htm |
+| Cypress Semiconductor Corp /De/ | 3674 | 2019 | 10-K | 2020-02-21 | cy-12292019x10xk.htm | https://www.sec.gov/Archives/edgar/data/791915/000079191520000006/cy-12292019x10xk.htm |
+| Dsp Group Inc /De/ | 3674 | 2018 | 10-K | 2019-03-11 | dspg20181231_10k.htm | https://www.sec.gov/Archives/edgar/data/915778/000143774919004573/dspg20181231_10k.htm |
+| Dsp Group Inc /De/ | 3674 | 2019 | 10-K | 2020-03-11 | dspg20191231_10k.htm | https://www.sec.gov/Archives/edgar/data/915778/000143774920004811/dspg20191231_10k.htm |
+| Enphase Energy, Inc. | 3674 | 2018 | 10-K | 2019-03-15 | a2018form10-k.htm | https://www.sec.gov/Archives/edgar/data/1463101/000146310119000033/a2018form10-k.htm |
+| Enphase Energy, Inc. | 3674 | 2019 | 10-K | 2020-02-21 | a2019q410-kdoc.htm | https://www.sec.gov/Archives/edgar/data/1463101/000146310120000021/a2019q410-kdoc.htm |
+| Flex Ltd. | 3672 | 2018 | 10-K | 2018-06-14 | flex331201810-k.htm | https://www.sec.gov/Archives/edgar/data/866374/000086637418000007/flex331201810-k.htm |
+| Maxlinear Inc | 3674 | 2018 | 10-K | 2019-02-05 | a12311810-k.htm | https://www.sec.gov/Archives/edgar/data/1288469/000128846919000006/a12311810-k.htm |
+| Maxlinear Inc | 3674 | 2019 | 10-K | 2020-02-05 | a12311910-k.htm | https://www.sec.gov/Archives/edgar/data/1288469/000128846920000013/a12311910-k.htm |
+| Mellanox Technologies, Ltd. | 3674 | 2019 | 10-K | 2020-02-20 | a2019123110-k.htm | https://www.sec.gov/Archives/edgar/data/1356104/000135610420000008/a2019123110-k.htm |
+| Oclaro, Inc. | 3674 | 2018 | 10-K | 2018-08-23 | oclaro10k2018-06x30.htm | https://www.sec.gov/Archives/edgar/data/1110647/000162828018011325/oclaro10k2018-06x30.htm |
+| On Semiconductor Corp | 3674 | 2019 | 10-K | 2020-02-19 | d864442d10k.htm | https://www.sec.gov/Archives/edgar/data/1097864/000119312520041751/d864442d10k.htm |
+| Semtech Corp | 3674 | 2018 | 10-K | 2018-03-22 | smtc-01282018x10k.htm | https://www.sec.gov/Archives/edgar/data/88941/000162828018003489/smtc-01282018x10k.htm |
+| Semtech Corp | 3674 | 2019 | 10-K | 2019-03-21 | smtc-01272019x10k.htm | https://www.sec.gov/Archives/edgar/data/88941/000162828019003241/smtc-01272019x10k.htm |
+| Synaptics Inc | 3674 | 2018 | 10-K | 2018-08-24 | syna-10k_20180630.htm | https://www.sec.gov/Archives/edgar/data/817720/000156459018022311/syna-10k_20180630.htm |
+| Synaptics Inc | 3674 | 2019 | 10-K | 2019-08-23 | syna-10k_20190629.htm | https://www.sec.gov/Archives/edgar/data/817720/000156459019032908/syna-10k_20190629.htm |
+| Ttm Technologies Inc | 3672 | 2018 | 10-K | 2018-02-23 | d490922d10k.htm | https://www.sec.gov/Archives/edgar/data/1116942/000119312518055988/d490922d10k.htm |
+| Ttm Technologies Inc | 3672 | 2018 | 10-K | 2019-02-26 | ttmi-10k_20181231.htm | https://www.sec.gov/Archives/edgar/data/1116942/000156459019004520/ttmi-10k_20181231.htm |
+| Ttm Technologies Inc | 3672 | 2019 | 10-K | 2020-02-26 | ttmi-10k_20191230.htm | https://www.sec.gov/Archives/edgar/data/1116942/000156459020006477/ttmi-10k_20191230.htm |
+
+### B2b: later filing (read only if still a donor after B2a): 11 documents, 11 firms
+
+| firm | SIC | FY | form | filed | document | url |
+|---|---|---|---|---|---|---|
+| Alpha & Omega Semiconductor Ltd | 3674 | 2020 | 10-K | 2020-09-02 | aosl630202010k.htm | https://www.sec.gov/Archives/edgar/data/1387467/000138746720000047/aosl630202010k.htm |
+| Ambarella Inc | 3674 | 2020 | 10-K | 2020-03-27 | amba-10k_20200131.htm | https://www.sec.gov/Archives/edgar/data/1280263/000156459020013513/amba-10k_20200131.htm |
+| Applied Materials Inc /De | 3674 | 2020 | 10-K | 2020-12-11 | amat-20201025.htm | https://www.sec.gov/Archives/edgar/data/6951/000000695120000048/amat-20201025.htm |
+| Cirrus Logic, Inc. | 3674 | 2020 | 10-K | 2020-05-20 | crus-20200328.htm | https://www.sec.gov/Archives/edgar/data/772406/000077240620000007/crus-20200328.htm |
+| Cree, Inc. | 3674 | 2020 | 10-K | 2020-08-19 | cree-20200628.htm | https://www.sec.gov/Archives/edgar/data/895419/000089541920000066/cree-20200628.htm |
+| Flex Ltd. | 3672 | 2020 | 10-K | 2020-05-28 | flex331202010-k.htm | https://www.sec.gov/Archives/edgar/data/866374/000086637420000009/flex331202010-k.htm |
+| Kulicke & Soffa Industries Inc | 3674 | 2020 | 10-K | 2020-11-20 | klic-20201003.htm | https://www.sec.gov/Archives/edgar/data/56978/000005697820000146/klic-20201003.htm |
+| Marvell Technology Group Ltd | 3674 | 2020 | 10-K | 2020-03-23 | mrvl-20200201.htm | https://www.sec.gov/Archives/edgar/data/1058057/000105805720000014/mrvl-20200201.htm |
+| Microchip Technology Inc | 3674 | 2020 | 10-K | 2020-05-22 | a2020-03x3110k.htm | https://www.sec.gov/Archives/edgar/data/827054/000082705420000119/a2020-03x3110k.htm |
+| Semtech Corp | 3674 | 2020 | 10-K | 2020-03-20 | smtc-01262020x10k.htm | https://www.sec.gov/Archives/edgar/data/88941/000008894120000003/smtc-01262020x10k.htm |
+| Synaptics Inc | 3674 | 2020 | 10-K | 2020-08-21 | syna-10k_20200627.htm | https://www.sec.gov/Archives/edgar/data/817720/000156459020040946/syna-10k_20200627.htm |
+
+### B2c: exposure only (fails filter 1-4 or < $100M): 13 documents, 8 firms
+
+| firm | SIC | FY | form | filed | document | url |
+|---|---|---|---|---|---|---|
+| Ceva Inc | 3674 | 2018 | 10-K | 2019-03-04 | ceva20181231_10k.htm | https://www.sec.gov/Archives/edgar/data/1173489/000143774919003949/ceva20181231_10k.htm |
+| Ceva Inc | 3674 | 2019 | 10-K | 2020-02-28 | ceva20191231_10k.htm | https://www.sec.gov/Archives/edgar/data/1173489/000143774920003932/ceva20191231_10k.htm |
+| Mosys, Inc. | 3674 | 2018 | 10-K | 2019-03-12 | mosy-10k_20181231.htm | https://www.sec.gov/Archives/edgar/data/890394/000156459019007379/mosy-10k_20181231.htm |
+| Mosys, Inc. | 3674 | 2019 | 10-K | 2020-03-17 | mosy-10k_20191231.htm | https://www.sec.gov/Archives/edgar/data/890394/000156459020011421/mosy-10k_20191231.htm |
+| Nxp Semiconductors N.V. | 3674 | 2019 | 10-K | 2020-02-27 | nxp10-k.htm | https://www.sec.gov/Archives/edgar/data/1413447/000141344720000009/nxp10-k.htm |
+| Pixelworks, Inc | 3674 | 2018 | 10-K | 2019-03-13 | pxlw12312018_10k.htm | https://www.sec.gov/Archives/edgar/data/1040161/000104016119000008/pxlw12312018_10k.htm |
+| Pixelworks, Inc | 3674 | 2019 | 10-K | 2020-03-11 | pxlw1231201910k.htm | https://www.sec.gov/Archives/edgar/data/1040161/000104016120000010/pxlw1231201910k.htm |
+| Quantenna Communications Inc | 3674 | 2018 | 10-K | 2019-03-01 | quantenna-12302018x10k.htm | https://www.sec.gov/Archives/edgar/data/1370702/000137070219000006/quantenna-12302018x10k.htm |
+| Sitime Corp | 3674 | 2019 | 10-K | 2020-03-02 | sitm-10k_20191231.htm | https://www.sec.gov/Archives/edgar/data/1451809/000156459020008145/sitm-10k_20191231.htm |
+| Solaredge Technologies, Inc. | 3674 | 2019 | 10-K | 2020-02-27 | sedg10k2019.htm | https://www.sec.gov/Archives/edgar/data/1419612/000117891320000672/sedg10k2019.htm |
+| Solaredge Technologies Inc | 3674 | 2018 | 10-K | 2019-02-28 | zk1922755.htm | https://www.sec.gov/Archives/edgar/data/1419612/000117891319000721/zk1922755.htm |
+| Xperi Corp | 3674 | 2018 | 10-K | 2019-02-20 | xper-10k_20181231.htm | https://www.sec.gov/Archives/edgar/data/1690666/000156459019003460/xper-10k_20181231.htm |
+| Xperi Corp | 3674 | 2019 | 10-K | 2020-02-18 | xper-10k_20191231.htm | https://www.sec.gov/Archives/edgar/data/1690666/000156459020005044/xper-10k_20191231.htm |
+
+**Totals:** 45 documents. B2a 21, B2b 11, B2c 13.
+
+## B3: the Skyworks 10-Q for the quarter ended 29 March 2019 (approved 25 Nov 2026)
+
+Purpose: check whether Penelope's note "about 12 % of H1 FY2019" comes from this 10-Q. Same columns as B1. The whole filing is 4.8 MB (upper bound).
+
+| firm | FY | form | period end | filed | document | search found Huawei | filing total MB | url |
+|---|---|---|---|---|---|---|---|---|
+| Skyworks | 2019 | 10-Q | 2019-03-29 | 2019-05-03 | q21910qmarch292019.htm | not searched (10-Qs were not in the search) | 4.8 | https://www.sec.gov/Archives/edgar/data/4127/000000412719000022/q21910qmarch292019.htm |

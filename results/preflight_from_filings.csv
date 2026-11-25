@@ -1,0 +1,8 @@
+firm,group,origin,origin_filed,days_after_end,known_at_cutoff,first_10k10q,reports_up_to_origin,20q_estimate,predecessor,last_report,h1,h2,h3,h4
+NeoPhotonics,exposed,10-Q 2019-03-31,2019-05-07,37,yes,2011-03-28,34,likely pass,none known,10-Q 2022-06-30 (filed 2022-07-26),yes,yes,yes,yes
+Inphi,exposed,10-Q 2019-03-31,2019-05-06,36,yes,2011-03-07,34,likely pass,none known,10-K 2020-12-31 (filed 2021-02-25),yes,yes,yes,yes
+Lumentum,exposed,10-Q 2019-03-30,2019-05-07,38,yes,2015-09-25,16,likely FAIL,"JDS Uniphase (now Viavi, CIK 0000912093): spun off Aug 2015 (from memory)",10-Q 2026-09-26 (filed 2026-11-03),yes,yes,yes,yes
+Qorvo,exposed,10-K 2019-03-30,2019-05-17,48,yes,2014-09-12,20,borderline,RF Micro Devices and TriQuint: merged Jan 2015 (from memory),10-Q 2026-06-27 (filed 2026-07-28),yes,yes,yes,yes
+Micron,exposed,10-Q 2019-02-28,2019-03-21,21,yes,1994-03-22,99,likely pass,none known,10-K 2026-09-03 (filed 2026-10-09),yes,yes,yes,yes
+Finisar,exposed,10-K 2019-04-28,2019-06-14,47,yes,1999-12-27,79,likely pass,none; acquired by II-VI in Sep 2019 (from memory),10-Q 2019-07-28 (filed 2019-09-04),yes,no,no,no
+Intel,donor,10-Q 2019-03-30,2019-04-26,27,yes,1994-03-25,102,likely pass,none known,10-Q 2026-09-26 (filed 2026-10-30),yes,yes,yes,yes

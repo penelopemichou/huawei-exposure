@@ -10,6 +10,25 @@ Written on 24 Nov 2026 (Session 1), before any SEC file was downloaded and befor
 - **Source:** where the pre-filled number came from *before* checking: "Penelope's notes", "news" or "from memory".
 - **Verified?:** "to verify" until the number has been read in the 10-K itself, then "yes (date)". A number found only in a 10-Q or the news stays "not in 10-K".
 
+## Verified from the 10-Ks (Stage B1, 25 Nov 2026)
+
+Group and dose rules: `donor-rule.md` ("Exposure group and dose"). Dose = Huawei's share in the latest fiscal year that ended before 16 May 2019; "fallback, flagged" if that year gives no %. Rows in `results/huawei_sentences.csv`.
+
+| Firm | Latest FY ended before 16 May 2019 | Huawei % as written (FY2018 / FY2019 10-K) | Filing and section of the dose | Group | Dose | Verified? |
+|---|---|---|---|---|---|---|
+| NeoPhotonics | FY2018 (Dec 2018) | 46 % / 41 % (incl. HiSilicon) | 10-K FY2018, Item 1A (row 228) | exposed | **46 %** | yes (25 Nov 2026) |
+| Inphi | FY2018 (Dec 2018) | "approximately … 14%" / "approximately … 11%" | 10-K FY2018 (row 68; section heading not found by the extractor) | exposed | **14 %** | yes (25 Nov 2026) |
+| Lumentum | FY2018 (Jun 2018) | 11.0 % / 15.2 % | 10-K FY2018, Item 1 table (row 117) | exposed | **11.0 %** | yes (25 Nov 2026) |
+| Qorvo | FY2019 (Mar 2019) | 8 % / 13 % | 10-K FY2019, Item 1 (row 364) | exposed | **13 %** | yes (25 Nov 2026) |
+| Finisar | FY2019 (Apr 2019) | not given (below 10 %) / 10 % | 10-K FY2019, Item 8 (row 60) | exposed | **10 %** | yes (25 Nov 2026) |
+| Micron | FY2018 (Aug 2018) | not given / 12 % (FY2019) | 10-K FY2019, Item 8 (row 214) | exposed | **12 %, fallback, flagged** | yes (25 Nov 2026) |
+| MACOM | FY2018 (Sep 2018) | named, no % | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
+| Skyworks | FY2018 (Sep 2018) | named, no % ("about 12 % of H1 FY2019": not in the 10-K; maybe a 10-Q, Stage B3) | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
+| Broadcom | FY2018 (Nov 2018) | not named as customer / named, no % | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
+| Qualcomm | FY2018 (Sep 2018) | licensee, $600 million / $450 million royalties (royalty income, not product sales) | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
+
+The pre-filled tables below are kept as they were written. Where they differ from this table, this table holds (for example Qorvo: 13 %, not "about 15 %").
+
 ## Table 1: firms with a known Huawei number (to verify)
 
 | Company | Fiscal year end | Huawei % of revenue by year (as written in the 10-K) | Filing and section | Origin quarter | Source | Verified? |

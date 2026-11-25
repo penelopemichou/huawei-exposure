@@ -1,0 +1,26 @@
+firm,outcome,criterion,detail,row (B1 row number unless marked B2a:)
+Acacia,not a donor,3 (history),"first 10-Q filed 2016-08-11 (after 2014); label test passed (only competitor/other mentions); unnamed 10%+ customers A, B, C, E",
+Broadcom,low exposure, implied (not a donor),5 (label test),"FY2019 10-K: ""Huawei Technologies Co. Ltd., one of our customers"" (customer without %)",37
+Finisar,exposed,5 (label test),"FY2019 10-K: Huawei 10% of total revenue in fiscal 2019 (customer with %)",60
+II-VI,not a donor,1 (industry),"SIC 3827; label test passed (one general Entity List mention)",
+Inphi,exposed,5 (label test),"Huawei about 14% (2018) and 11% (2019) of total revenue (customer with %)",94
+Lumentum,exposed,1 (industry) and 5 (label test),"SIC 3669; Huawei 11.0% (FY2018) and 15.2% (FY2019) of total revenue",154
+MACOM,low exposure, implied (not a donor),5 (label test),"FY2019 10-K: resumed shipments of some products to Huawei (customer without %); no direct customer >= 10% in FY2018-19",199
+Micron,exposed,5 (label test),"FY2019 10-K: sales to Huawei 12% of total revenue",203
+NeoPhotonics,exposed,5 (label test),"Huawei incl. HiSilicon 46% (2018) and 41% (2019) of total revenue",264
+Qorvo,exposed,5 (label test),"Huawei 8% (FY2018) and 13% (FY2019) of total revenue",364
+Qualcomm,low exposure, implied (not a donor),1 (industry) and 5 (label test),"SIC 3663; Huawei a royalty licensee: $600M (FY2018) and $450M (FY2019), no % given",381
+Skyworks,low exposure, implied (not a donor),5 (label test),"FY2018/FY2019 10-K: Huawei among key customers; shipments suspended; only Apple >= 10%",405
+Xilinx,moved out by a later filing,later filing (label test),"FY2018/FY2019: no Huawei mention; FY2020 10-K: unable to sell certain products to Huawei (customer without %)",431
+Oclaro,exposed but no data after the event,data check (no h=1 target),"FY2018 10-K: Huawei 11% of revenue (customer with %); acquired by Lumentum Dec 2018, no quarter reported after 16 May 2019",B2a:100
+Sparton,not a donor,data check (no h=1 target),no quarter reported after 16 May 2019 (no Huawei hit),
+Applied Optoelectronics,not a donor,5 (label test),"FY2019 10-K: restrictions on our ability to sell or ship products to Huawei or other customers (customer without %)",B2a:7
+Cree/Wolfspeed,not a donor,5 (label test),"FY2019 10-K: suspended shipments of all products to Huawei (customer without %)",B2a:12
+Cypress,not a donor,5 (label test),"FY2019 10-K: our sales were impacted ... restricted sales ... to Huawei (customer without %)",B2a:17
+DSP Group,not a donor,5 (label test),"FY2018/FY2019 10-K: customer base includes Huawei (customer without %)",B2a:19
+Flex,not a donor,5 (label test),"FY2018 10-K: key customers ... Huawei in our CEC segment (customer without %)",B2a:48
+MaxLinear,not a donor,5 (label test),"FY2018 10-K: Huawei and ZTE are each our current customers (customer without %)",B2a:58
+ON Semiconductor,not a donor,5 (label test),"FY2019 10-K: Huawei ... and certain other customers added to the Entity List (customer without %)",B2a:105
+Semtech,not a donor,5 (label test),"FY2018/FY2019 10-K: Representative Customers by End-Markets include Huawei (customer without %)",B2a:106
+Synaptics,not a donor,5 (label test),"FY2018/FY2019 10-K: leading OEM customers include Huawei (customer without %)",B2a:133
+TTM Technologies,not a donor,5 (label test),"FY2018/FY2019 10-K: five largest OEM customers include Huawei (customer without %)",B2a:156

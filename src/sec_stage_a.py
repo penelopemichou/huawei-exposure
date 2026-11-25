@@ -89,6 +89,10 @@ def main():
             params["from"] = (page - 1) * 100
         get("https://efts.sec.gov/LATEST/search-index?" + urlencode(params),
             OUT / "fts" / f"{name}_p{page}.json")
+    elif job == "frames":   # Stage A2: calendar-2018 revenue, all filers, one file per tag
+        for tag in args:
+            get(f"https://data.sec.gov/api/xbrl/frames/us-gaap/{tag}/USD/CY2018.json",
+                OUT / "frames" / f"{tag}_CY2018.json")
     elif job == "sic":
         code, page = args[0], int(args[1])
         params = {"action": "getcompany", "SIC": code, "type": "10-K", "dateb": "",

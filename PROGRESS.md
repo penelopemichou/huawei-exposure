@@ -93,6 +93,87 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
 - **The search gives no sentences**, so no hit is labelled yet. Labels and the "Customer A" table need Stage B.
 - Provisional: 12 of the 14 mention Huawei in a fiscal 2018/2019 10-K. **Intel and Xilinx are not named.** 22 other donor-code firms mention Huawei; 685 listed entries do not.
 
+## Session 2 log, continued (25 Nov 2026), not committed after `865283b`
+
+- Donor rule reworded to a label-based test (`notes/donor-rule.md`). Committed in `865283b` with the Stage A results and the Stage B plan, after the private-word and email check (clean).
+- **Stage A2 done:** 5 frames files, 1.1 MB, requests 43–47 of 60.
+  - 136 of the 714 industry-list entries have 2018 revenue; **91 have at least $100 million**.
+  - **578 are missing from all 5 files**, mostly firms that stopped filing long ago, plus a few private individuals. The list is in `data/raw/stage_a/frames_missing.csv` (gitignored, because it holds private names).
+  - Among our 14 and the 22: only **Cree** is missing (to check).
+- **Stage B1 done:** 31 documents, 97.6 MB, largest 6.4 MB. 434 rows extracted and labelled. Results: `notes/stage-b-results.md`; every row: `notes/stage-b1-labels.md`; dropped donors: `results/dropped_donors.csv`.
+- **Proposed:**
+  - **exposed:** NeoPhotonics, Inphi, Lumentum, Qorvo, Micron, Finisar;
+  - **low exposure (implied, to decide):** MACOM, Skyworks, Broadcom, Qualcomm;
+  - **donor:** Intel;
+  - **out of the donor group:** Xilinx (FY2020), Acacia (history), II-VI (industry code).
+- New scripts: `src/sec_stage_b.py` (download with the 20 MB / 100 MB stops), `src/extract_sentences.py`, `src/label_sentences.py`.
+- **Next step after A2 (counted, not started):** filing lists for 80 firms, about 80–100 requests.
+
+## Session 2 log, continued (25 Nov 2026, second part), not committed
+
+- **Decided by Penelope:**
+  - MACOM, Skyworks, Broadcom and Qualcomm = **low exposure, implied**: not donors, not in the primary test, shown in their own rows and in the guidance-cut table.
+  - Qualcomm's exposure is royalty income, not product sales.
+  - Group and dose rules written in `donor-rule.md` and `screening-plan.md`.
+  - Dose: NeoPhotonics 46 %, Inphi 14 %, Lumentum 11.0 %, Qorvo 13 %, Finisar 10 %, Micron 12 % (**fallback, flagged**).
+- **Proposed B3 (not downloaded):** the Skyworks 10-Q for the quarter ended 29 Mar 2019, `q21910qmarch292019.htm` (`https://www.sec.gov/Archives/edgar/data/4127/000000412719000022/q21910qmarch292019.htm`). The whole filing is 4.8 MB; the document is estimated at 1.5–3 MB.
+- **Cree (now Wolfspeed) missing from the frames:** its FY2019 revenue (Jun 2018–Jun 2019, $538.2M, refiled in a 2021 8-K) carries no frame label. It passes the size test by hand.
+- **10 random entries of the 578 missing (seed 42):** 0 of 10 filed a 10-K for FY2018 or FY2019.
+  - 6 stopped filing before 2018, 2 are 20-F filers, 1 started 10-Ks later, 1 files only Form D.
+  - 0 of 10 still allows up to about 26 % of the 578 to have filed (95 % bound), and Cree shows the frames can miss an active firm.
+  - Exact check proposed, not run: the SEC's quarterly 10-K index files for 2019.
+- **Filing lists:** 80 firms + 7 older files + Cree = 88 of 100 requests (plus 2 Cree checks and 10 random lists); 0 errors.
+  - Older files for the first-filing date were **not** downloaded (they would have made 109). Criterion 3 for 20 firms is "pass?", to confirm from the revenue files.
+- **Donor screen** (`src/donor_screen.py`, `results/donor_screen.csv`):
+  - 92 firms; 68 pass criteria 1–4; **40 pass with no Huawei hit**.
+  - 14 have FY2018/19 hits not yet read; 6 have only later hits.
+  - 24 fail: 10 not 10-K filers, 13 too young (incl. Broadcom Inc., new entity 2018), SigmaTron's origin filed 86 days late.
+- **Pre-flight from filing lists** (`src/preflight_from_filings.py`, `results/preflight_from_filings.csv`). An estimate: the exact 20-quarter count needs the revenue files.
+  - All 7 origins filed within 65 days.
+  - **Lumentum** 16 reports up to the origin (likely fails the 20-quarter rule) and **Qorvo** 20 (borderline). The predecessor joins (JDSU, RFMD/TriQuint) are from memory, to verify.
+  - **Finisar's last report is the 10-Q for Jul 2019: h = 1 only.**
+  - **Warning:** at h = 2–4 the primary exposed group may be only NeoPhotonics, Inphi, Micron and Qorvo (4), or 3 if Qorvo fails. That is below Penelope's stop line.
+- **B2 revised** (`notes/stage-b-plan.md`, not downloaded): 45 documents.
+  - B2a: 21 documents, 14 firms that can become donors.
+  - B2b: 11 later documents, read only if still a donor after B2a.
+  - B2c: 13 documents, 8 firms, exposure only.
+  - Limit: the search covers 10-Ks filed up to 31 Dec 2020, so later filings are checked for firms with mid-2020 year ends but not for December year ends.
+
+## Session 2 log, continued (25 Nov 2026, third part)
+
+- **`notes/design-v2.md` written first:** h = 1 primary (h = 2, 3 secondary; h = 4 flagged COVID), the primary test with a permutation p-value, dose-response descriptive only, and the stitching rule.
+- **README.md created**, with the limits (including the later-filing gap for December year-end firms).
+- **Guidance-cut table** added to the plan below (nothing downloaded).
+- **16 well-known US chip firms:** all are in the 92 screened. The SEC index files are not needed.
+- **Downloads:** B2a + B2c 34 documents (119.0 MB of 120), B3 1 document (1.0 MB), 7 revenue files (1.8–4.4 MB). No errors.
+- **Results:** `notes/stage-b-results.md`, every B2 row in `notes/stage-b2-labels.md`, dropped donors in `results/dropped_donors.csv` (25 lines).
+  - Donors so far 41 (+ up to 7 after B2b).
+  - **Oclaro** is exposed (11 % FY2018) but has no data after the event.
+  - No new exposed firm in B2c.
+  - Skyworks' "about 12 % of H1 FY2019" is not in the March 2019 10-Q.
+  - New data check: the h = 1 target must be reported after 16 May 2019.
+- **Quarter counts** (`results/quarter_counts.csv`, no values printed): all 7 firms pass the 20-quarter rule by Project 2's count. Qorvo qualifies for stitching but needs none.
+  - **Lumentum's 23 include 9 pre-spin-off carve-out quarters**, which rule (c) may exclude. Penelope decides.
+- **B2b (11 documents) waits** for Penelope's reading of the B2a results.
+
+## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
+
+**One row per firm that revised its current-quarter revenue guidance after 16 May 2019.** Firms looked at: the exposed firms, the "low exposure, implied" firms and the donors.
+
+| Column | Content |
+|---|---|
+| firm | |
+| quarter guided | the fiscal quarter the guidance is for (the quarter in progress on 16 May 2019) |
+| range before | the guided revenue range, with date and accession of the 8-K it came from |
+| range after | the revised range, with date and accession |
+| midpoint change % | 100 × (midpoint after − midpoint before) ÷ midpoint before |
+| revision names Huawei? | yes / no, from the text of the revision |
+| Huawei dose | from `screening-plan.md` ("n/a" for low exposure and donors) |
+
+- **No revision = "no revision", never 0.**
+- **Sources: 8-K earnings releases** (usually exhibit 99.1) in the SEC filing lists already saved. Candidate 8-Ks are picked from those lists (filed between the last guidance before 16 May 2019 and the end of the guided quarter). The file list with links and sizes is shown before any "yes".
+- **A firm that gives no quarterly guidance** is marked "no guidance given", not "no revision".
+
 ## Session 2 plan (proposed 24 Nov 2026, waits for "yes")
 
 Three stages, each small. Stage B and C file names are only known after Stage A, so each later stage is shown again, file by file, and needs its own "yes".
