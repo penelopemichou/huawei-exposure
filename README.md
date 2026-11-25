@@ -17,6 +17,7 @@ Did US chip and electronic-component suppliers with more disclosed Huawei exposu
 - **The industry lists carry no dates**, and the 2018 revenue files (SEC frames) can miss active firms (Cree/Wolfspeed was missing). The donor pool may be incomplete.
 - **Few exposed firms**, and fewer at longer horizons. One firm can move the result.
 - **Acquired firms disappear from the sample.** Oclaro (Huawei 11 % of FY2018 revenue) was bought by Lumentum in Dec 2018 and has no quarter after the event. Finisar was bought by II-VI and stops reporting after July 2019, so it has h = 1 only. Firms that survived may differ from those that did not.
+- **No 8-K is not the same as no revision.** The guidance-cut table only sees guidance and revisions filed with the SEC on 8-K. A firm may update its outlook in an unfiled press release or on a conference call. Some firms give their outlook only on the call (Micron, DSP Group in 2019).
 - **Unsourced figures are not used.** For example, a note of Skyworks at "about 12 % of H1 FY2019" was not found in its 10-Ks or its March 2019 10-Q: unsourced, not used.
 - **The yardstick lines come from non-chip companies**, so they are a rough guide only.
 - **The new revenue accounting standard (ASC 606), adopted by most firms in 2018–2019, can cause small level shifts in revenue history** where the old and new standards differ. It affects all groups.

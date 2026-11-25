@@ -28,7 +28,7 @@ PROJECT = Path(__file__).resolve().parent.parent
 STAGE_A = PROJECT / "data" / "raw" / "stage_a"
 OUT = PROJECT / "data" / "raw" / "filing_lists"
 LOG = OUT / "request_log.csv"
-LIMITS = {"cree": 2, "random10": 10, "lists80": 100, "revenue7": 7, "stagec": 45, "stagec2": 4, "amend12": 12}
+LIMITS = {"cree": 2, "random10": 10, "lists80": 100, "revenue7": 7, "stagec": 45, "stagec2": 4, "amend12": 12, "guidance48": 48}
 STAGEC_MAX_FILE_MB, STAGEC_MAX_TOTAL_MB = 10, 200   # approved 25 Nov 2026
 # revenue7 (approved 25 Nov 2026): XBRL companyfacts of the 6 exposed firms and Intel
 REVENUE7 = {"NeoPhotonics": "0001227025", "Inphi": "0001160958", "Lumentum": "0001633978", "Qorvo": "0001604778",
@@ -181,6 +181,13 @@ def main():
         for cik in ciks:
             total = get_capped("amend12", f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
                                OUT / "companyfacts" / f"CIK{cik}.json", total)
+        print(f"done: run total {total:.1f} MB")
+    elif job == "guidance48":   # guidance-cut 8-Ks (approved 26 Nov 2026): 10 MB per file, 40 MB in total
+        STAGEC_MAX_TOTAL_MB = 40
+        rows = [r for r in csv.DictReader((PROJECT / "results" / "guidance_candidates.csv").open()) if r["url"]]
+        total = 0.0
+        for r in rows:
+            total = get_capped("guidance48", r["url"], OUT / "guidance" / f"{r['accession']}.txt", total)
         print(f"done: run total {total:.1f} MB")
     elif job == "older":
         for name in sys.argv[2:]:

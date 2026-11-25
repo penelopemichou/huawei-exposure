@@ -1,0 +1,7 @@
+version,h,exposed mean,exposed median,low mean,low median,donors mean,donors median,order of means,order of medians,order changes?
+with all 16 low-exposure firms,1,-4.65,-1.97,-8.03,-9.28,1.65,2.29,low < exposed < donors,low < exposed < donors,no
+with all 16 low-exposure firms,2,-2.69,5.3,-8.39,-8.65,1.8,4.87,low < exposed < donors,low < donors < exposed,YES
+with all 16 low-exposure firms,3,2.19,11.45,-7.18,-6.26,3.61,5.23,low < exposed < donors,low < donors < exposed,YES
+without the four FY2020-only firms (12),1,-4.65,-1.97,-10.16,-11.26,1.65,2.29,low < exposed < donors,low < exposed < donors,no
+without the four FY2020-only firms (12),2,-2.69,5.3,-10.87,-10.84,1.8,4.87,low < exposed < donors,low < donors < exposed,YES
+without the four FY2020-only firms (12),3,2.19,11.45,-8.86,-7.18,3.61,5.23,low < exposed < donors,low < donors < exposed,YES

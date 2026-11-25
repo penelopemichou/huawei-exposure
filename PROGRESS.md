@@ -315,7 +315,27 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
 - **Sensitivity donors** are near zero at h = 1 (mean +0.19).
 - **Scaled outcome, h = 1, group medians:** exposed −1.59, low −1.48, primary donors +0.71, sensitivity −0.29; Qorvo, Lumentum and Kimball are too thin.
 - **Post-hoc (verdict unchanged, not investigated):** Qualcomm h = 1 +44/+48 % (from memory, the Apple settlement quarter); large rule disagreements for Plexus, Bel Fuse and Rambus; very large h = 3 misses for Advanced Energy and First Solar.
-- **Not done yet:** comparison with the predictions (Penelope's call); write-up; guidance-cut table (separate step, after the main run). Results not committed.
+- Committed **`0fd0af9`** (results opened).
+- **POST-HOC (26 Nov 2026, after opening; verdict unchanged):** in the three-group check, medians next to means (`results/posthoc_three_groups_medians.csv`):
+  - at h = 1 the order is the same by medians (low < exposed < donors);
+  - **at h = 2 and h = 3 it changes to low < donors < exposed**, with or without the four FY2020-only firms;
+  - low exposure is lowest in every version.
+- **Guidance-cut step, proposed (nothing downloaded):** `src/guidance_candidates.py` → `results/guidance_candidates.csv`.
+  - 48 8-K filings from 22 firms (22 before, 26 after), 29.4 MB as complete-submission files.
+  - 9 firms have no 8-K in the after-window, including Lumentum and NeoPhotonics.
+  - Finisar, Broadcom, Semtech and possibly Marvell had no pre-event guidance for the quarter in progress.
+  - Limit: revisions made only in unfiled press releases or on calls are not seen.
+  - **Waiting for Penelope's "yes"** (proposed limits: 10 MB per file, 40 MB in total).
+- **Guidance-cut step done (Penelope's "yes", 26 Nov 2026):** 48 8-K filings downloaded, 29.3 MB, 0 errors (job `guidance48`, `data/raw/filing_lists/guidance/`).
+  - Read offline (`src/guidance_extract.py` → `results/guidance_sentences.csv`); ranges copied verbatim into `src/guidance_table.py` → **`results/guidance_cut_table.csv`**.
+  - **Mid-quarter revisions found, all naming Huawei:** Inphi −5.07 %, Qorvo −6.33 %, MACOM −11.48 %, Skyworks −7.27 %, MaxLinear −3.51 %, Cree −6.93 %. Cirrus Logic reaffirmed ("no material impact").
+  - **No 8-K after 16 May:** NeoPhotonics, Lumentum, Micron, Qualcomm, Synaptics, DSP Group, Applied Optoelectronics, Alpha & Omega, Xilinx.
+  - **No pre-event guidance for the quarter:** Finisar, Broadcom (annual outlook only: $24.5 billion → $22.5 billion), Semtech, Marvell.
+  - **No guidance range in the filed 8-K:** Micron, DSP Group (outlook on the call), Qualcomm (no overall range), Finisar.
+  - **Session 0 notes:** Qorvo −6 % sourced (−6.3 %); Skyworks −7 % sourced (−7.3 %); Lumentum −8 % unsourced, not used.
+  - **Found, not applied:** Skyworks' "about 12 % of H1 FY2019" is in its 4 June 2019 8-K (earlier marked unsourced). Qorvo's 21 May 8-K says Huawei was 15 % of FY2019 revenue, vs 13 % in the 10-K (the dose stays 13 % by rule).
+  - README limit added: no 8-K is not the same as no revision.
+- **Not done yet:** comparison with the predictions (Penelope's call); write-up. Not committed.
 
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
