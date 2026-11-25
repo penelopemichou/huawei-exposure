@@ -294,7 +294,14 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
   - **0 targets after the origin**; the latest target is the origin quarter itself.
 - 64 firms; forecasts kept: B4 3,952, AutoETS 4,028, AVG 3,952. AutoETS skipped no origin. B4 is missing some for Advanced Energy, Bel Fuse, CTS and Plexus (year-ago quarters filed late).
 - **Fragile scales:** Qorvo (primary exposed) 4 origins, 10 forecasts (1 at h = 4); Lumentum 3 origins, 6 forecasts (0 at h = 4); Kimball 3 origins, 6 forecasts.
-- **Waiting:** Penelope's "yes, commit" for step 3b. Step 3c runs only when she says so, and stays unopened until "open".
+- Committed **`d389a05`**: step 3b, plus design-v2 (g)'s minimum of 8 pre-event h = 1 forecasts. Qorvo, Lumentum and Kimball are "scale too thin"; Qorvo stays in the primary test.
+- **Step 3c (Penelope's go-ahead):** `src/event_rows.py` wrote `results/event_rows.csv`, **496 rows, not opened, nothing printed**.
+- **Step 3d** (`src/event_checks.py`; pass/fail and counts only):
+  - (a) the rerun is identical (SHA-256 `d7faae7a85a36783…` both): **PASS**.
+  - (b) no origin is shifted: 64 of 64 firms' last known quarter at the cutoff is the origin, and 36 of 36 match the eligibility tables: **PASS**.
+  - (c) sign convention: made-up test **PASS**; 495 rows recomputed with 0 mismatches; 1 row has no forecast (Advanced Energy, B4, h = 3: a year-ago quarter was not public).
+  - (d) counts: **all primary, secondary and low-exposure counts match**, and primary exposed is 5 at h = 1 and 4 at h = 2–4 (both rules, PASS). Sensitivity: B4 h = 3 is 27/28 (Advanced Energy, as in (c)) and h = 4 is 26/28 (SMTC and SunPower have no h = 4 quarter in the real table; my simplified count had said they did).
+- **Waiting for Penelope's "open".** Nothing from the event file has been printed. Not committed.
 
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
