@@ -285,6 +285,17 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
 - **Tag fix applied (Penelope's yes): no change needed** — 8 firms had later restatements only (first-reported unaffected); Plexus and Benchmark already use the total tag (4/4, 11/11). `src/tag_fix.py`, `results/tag_fix.csv`, `notes/tag-review.md`.
 - **Waiting:** Penelope's "yes, commit" for the scanned files; her predictions. No forecast has been run.
 
+## Session 3 log (26 Nov 2026)
+
+- Committed `7e9b4e4` (copied code, rebuilt table, data check, tag review) and **`604c437`: both sets of predictions**, before any forecast.
+- **Step 3b, the usual-miss scales** (`src/usual_miss.py`; rows and scales saved in `results/usual_miss_rows.csv` and `results/usual_miss_scales.csv`, not printed):
+  - pre-event rolling forecasts with the copied Project 2 code, from each firm's `first_origin`;
+  - **only targets on or before each firm's origin quarter** (Penelope's rule);
+  - **0 targets after the origin**; the latest target is the origin quarter itself.
+- 64 firms; forecasts kept: B4 3,952, AutoETS 4,028, AVG 3,952. AutoETS skipped no origin. B4 is missing some for Advanced Energy, Bel Fuse, CTS and Plexus (year-ago quarters filed late).
+- **Fragile scales:** Qorvo (primary exposed) 4 origins, 10 forecasts (1 at h = 4); Lumentum 3 origins, 6 forecasts (0 at h = 4); Kimball 3 origins, 6 forecasts.
+- **Waiting:** Penelope's "yes, commit" for step 3b. Step 3c runs only when she says so, and stays unopened until "open".
+
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
 **One row per firm that revised its current-quarter revenue guidance after 16 May 2019.** Firms looked at: the exposed firms, the "low exposure, implied" firms and the donors.

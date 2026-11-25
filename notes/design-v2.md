@@ -64,3 +64,5 @@ Reason: most donors were "analog/other" while most exposed firms are optical/dat
 - **Pre-event misses:** the firm's own rolling-origin forecasts whose target quarter is **on or before its origin quarter**. Same code, same 65-day rule, same 20-quarter start (as forecast-gap's "own pre-event misses").
 - Shown per firm and per rule (B4, AutoETS, and their average), **with the number of pre-event forecasts per firm**. A firm with few pre-event forecasts has a less reliable scale; this is shown, not hidden.
 - Descriptive, secondary; it does not replace the primary test in (b).
+- **Minimum (decided 26 Nov 2026, after step 3b, before any event forecast):** the scaled outcome uses only firms with **at least 8 pre-event forecasts at h = 1** (per rule: B4, AutoETS, and the average). Firms below that are listed as **"scale too thin"**. They **stay in the primary test**, which does not use the scale. Each firm's h = 1 count is printed next to its scaled result.
+- From step 3b (`results/usual_miss_scales.csv`, counts only): too thin are Qorvo (4 at h = 1), Lumentum (3) and Kimball (3).
