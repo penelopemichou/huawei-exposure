@@ -1,0 +1,4 @@
+outcome,N,n exposed,choices,expected rank-sum,observed rank-sum,one-sided p (primary),two-sided p,mean exposed,mean donors,gap (exposed - donors)
+average of B4 and AutoETS (primary),19,5,11628,50.0,41.0,0.222,0.4439,-4.65,1.65,-6.29
+B4 alone,19,5,11628,50.0,42.0,0.2499,0.4998,-6.45,-0.47,-5.97
+AutoETS alone,19,5,11628,50.0,38.0,0.1488,0.2976,-2.85,3.77,-6.61

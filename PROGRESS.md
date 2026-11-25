@@ -301,7 +301,21 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
   - (b) no origin is shifted: 64 of 64 firms' last known quarter at the cutoff is the origin, and 36 of 36 match the eligibility tables: **PASS**.
   - (c) sign convention: made-up test **PASS**; 495 rows recomputed with 0 mismatches; 1 row has no forecast (Advanced Energy, B4, h = 3: a year-ago quarter was not public).
   - (d) counts: **all primary, secondary and low-exposure counts match**, and primary exposed is 5 at h = 1 and 4 at h = 2–4 (both rules, PASS). Sensitivity: B4 h = 3 is 27/28 (Advanced Energy, as in (c)) and h = 4 is 26/28 (SMTC and SunPower have no h = 4 quarter in the real table; my simplified count had said they did).
-- **Waiting for Penelope's "open".** Nothing from the event file has been printed. Not committed.
+- Committed **`edda543`** (event rows unopened, checks), then **opened on Penelope's "open" (26 Nov 2026)**: `src/results.py`, tables in `results/results_*.csv`. Fixed setup only; extras labelled post-hoc.
+- **Primary test, h = 1 (5 exposed vs 14 primary donors, exact, 11,628 choices):**
+  - rank-sum **41** vs expected 50; **one-sided p = 0.222**, two-sided 0.444 (average of the two rules);
+  - B4 alone: 42, 0.250 / 0.500. AutoETS alone: 38, 0.149 / 0.298;
+  - **consistent** (both rules below 50). Mean gap −6.29 points.
+  - Exposed ranks: Micron 1, Finisar 4, NeoPhotonics 7, Inphi 12, Qorvo 17.
+- **Secondary, descriptive:**
+  - h = 2: mean gap −4.49; medians reverse.
+  - h = 3: mean gap −1.42; the rules disagree in sign.
+  - h = 4 (COVID): exposed above the donors, +8.99.
+- **Three-group check:** low exposure is the lowest group at every horizon (h = 1 mean −8.03; −10.16 without the four FY2020-only firms); the order at h = 1–3 is low < exposed < donors.
+- **Sensitivity donors** are near zero at h = 1 (mean +0.19).
+- **Scaled outcome, h = 1, group medians:** exposed −1.59, low −1.48, primary donors +0.71, sensitivity −0.29; Qorvo, Lumentum and Kimball are too thin.
+- **Post-hoc (verdict unchanged, not investigated):** Qualcomm h = 1 +44/+48 % (from memory, the Apple settlement quarter); large rule disagreements for Plexus, Bel Fuse and Rambus; very large h = 3 misses for Advanced Energy and First Solar.
+- **Not done yet:** comparison with the predictions (Penelope's call); write-up; guidance-cut table (separate step, after the main run). Results not committed.
 
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 

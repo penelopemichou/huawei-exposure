@@ -1,0 +1,13 @@
+h,group,firms,mean,median
+1,Exposed (primary),5,-4.65,-1.97
+1,Donor (primary),14,1.65,2.29
+1,Donor (sensitivity),28,0.19,-0.85
+2,Exposed (primary),4,-2.69,5.3
+2,Donor (primary),14,1.8,4.87
+2,Donor (sensitivity),28,-0.87,-2.64
+3,Exposed (primary),4,2.19,11.45
+3,Donor (primary),14,3.61,5.23
+3,Donor (sensitivity),27,2.44,1.22
+4,Exposed (primary),4,8.38,15.97
+4,Donor (primary),12,-0.61,4.1
+4,Donor (sensitivity),26,-1.53,-4.69
