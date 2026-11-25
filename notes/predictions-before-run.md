@@ -4,17 +4,29 @@ Fill this in after the lists are frozen and the permutation setup is fixed, and 
 
 Each prediction is short, concrete and checkable. Nothing here may be changed after the run; corrections go in a new dated section.
 
-## Penelope's predictions (date: ____ )
+## Penelope's predictions (date: 26 Nov 2026)
 
 I saw Claude's predictions before writing mine.
 
-1. Sign of the h = 1 gap (exposed − donors), B4: ____ ; AutoETS: ____
-2. Size of the gap, in percentage points: ____
-3. One-sided p-value: below 0.05 / 0.05–0.20 / above 0.20: ____
-4. Three-group order at h = 1 (exposed, low exposure, donors): ____
-5. Which exposed firm misses most, and which least: ____
-6. h = 2 and h = 3 compared with h = 1 (bigger, same, smaller gap): ____
-7. Anything else: ____
+PENELOPE'S PREDICTIONS (26 Nov 2026)
+Written by Claude in the chat at Penelope's request; Penelope adopts them as her own.
+Not blind: general knowledge of the 2019 chip downturn and the Huawei ban, and Claude Code's predictions seen earlier. No forecast, quarterly value or miss seen.
+
+1. Sign of the gap (exposed minus primary donors, h = 1, signed miss): negative under both B4 and AutoETS. Confidence about 65%. The main driver is Micron.
+
+2. Size: about -5 percentage points, plausible range -15 to +1. Micron alone could pull the average of 5 exposed firms down by 4 to 6 points. The other exposed firms offset part of it, because some Huawei suppliers shipped extra in May and June 2019 before the ban took hold.
+
+3. One-sided p-value (rank-sum, exact): band 0.05 to 0.20, best guess about 0.10. Chance of p below 0.05 is about 25%; it needs the exposed firms to sit in the bottom third of all 19 firms.
+
+4. Order of the three groups: exposed lowest is likely (about 65%). The full order exposed < low exposure < donors is about 35%. I expect low exposure and donors to look similar, because the 16 low-exposure firms were also hit by the 2019 downturn (smartphones, inventory correction).
+
+5. Biggest exposed miss: Micron (about 75%), mostly because DRAM prices fell sharply in 2019, which is not Huawei. Smallest, possibly positive: Inphi (datacentre demand), with NeoPhotonics second.
+
+6. h = 2 and h = 3: the gap is similar at h = 2 (first full quarter after the ban) and smaller at h = 3, as the sector recovered in late 2019 and the temporary licence kept some shipments going. h = 4 is not interpretable (COVID).
+
+7. Other: I expect the result to be driven by one or two firms (Micron, Qorvo), so it will be fragile. I expect the scaled outcome to reduce Micron's weight, since its usual miss is large. The sensitivity donors (contract manufacturers, solar, equipment) should sit close to zero. More likely than not, the result cannot be separated from sub-sector (memory and optical) effects, and the README should say that.
+
+Answers are in the text above.
 
 ## Claude's predictions (date: 25 Nov 2026; written after the freeze `adb3a8b`, before any forecast)
 
