@@ -261,6 +261,30 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
   - the primary test is unchanged.
   - Recorded in `notes/frozen-lists-amendment-1.md`, a new section at the end of `notes/frozen-lists.md`, `donor-rule.md` and `design-v2.md` (e).
 
+## Session 2 log, continued (25 Nov 2026, thirteenth part), not committed
+
+- **design-v2 (e):** the three-group check is reported with and without the four FY2020-only firms. **README:** ASC 606 limit added.
+- **forecast-gap code copied** (Penelope's "yes"), from `e332753`, with fingerprints in `notes/copied_from_forecast_gap.md`:
+  - 10 code files, 4 tables, and Project 2's 21 raw files into `data/raw/` (plus our 66 revenue files);
+  - the 7 unchanged code files are also identical to Project 2 `457d1ff`;
+  - a first attempt failed silently under zsh and was redone under bash, with an empty fingerprint counting as a failure.
+- **Edits, full diff in `notes/copied_code.diff` (the old User-Agent line's name replaced by `<name>`):**
+  - `download_edgar.py`: the one planned User-Agent change;
+  - `companies.py`: Meta out, 64 frozen firms in (Broadcom with three SEC IDs), the Project 2 pool chosen by type (20);
+  - `build_quarterly.py` and `list_revenue_tags.py`: lines added only (provisional tag order).
+- **Nothing run.** Next, per Penelope's order: (a) rebuild the Project 2 table and compare; (b) pre-event misses, then "yes, commit"; (c) event rows to a file, unopened; (d) checks; then "open".
+- **Open:** Penelope's predictions must be written and committed before any forecast (the pre-event misses are forecasts too).
+- **Step 3a done (diff approved by Penelope):** the copied `build_quarterly.py` rebuilt the table for all 84 companies (output captured; only counts shown).
+  - **Project 2's 20 are identical to Project 2's own table:** 1,454 rows, 0 of 14,540 cells differ, byte-identical CSV.
+  - Our 64 firms built without errors. `data/processed/revenue_quarterly.csv` (5,467 rows) holds post-origin quarters too: not printed, not opened, not committed.
+- **Proposed before 3b:** Project 2's data check (`check_data.py`) and a tag review for the 64 firms, output captured, flags and counts only.
+- **Data check and tag review done (25 Nov 2026)** (`src/check_ours.py`, `results/check_ours.csv`, `notes/tag-review.md`): quarters up to each origin only; counts and labels printed; a guard against 6+ digit numbers.
+  - 13 firms have tag conflicts, 10 of them inside the last 12 quarters before the origin (incl. primary donors AMD and Analog Devices).
+  - 16 firms have jumps in that window (incl. Cree in its origin quarter).
+  - **Fix proposed, not applied:** choose the tag that equals total revenue.
+- **Tag fix applied (Penelope's yes): no change needed** — 8 firms had later restatements only (first-reported unaffected); Plexus and Benchmark already use the total tag (4/4, 11/11). `src/tag_fix.py`, `results/tag_fix.csv`, `notes/tag-review.md`.
+- **Waiting:** Penelope's "yes, commit" for the scanned files; her predictions. No forecast has been run.
+
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
 **One row per firm that revised its current-quarter revenue guidance after 16 May 2019.** Firms looked at: the exposed firms, the "low exposure, implied" firms and the donors.

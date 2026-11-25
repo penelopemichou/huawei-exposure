@@ -47,6 +47,7 @@ Lumentum is still forecast and shown, labelled SECONDARY. **Primary exposed grou
 - Descriptive only: no test, shown per horizon and per rule, with every firm's own miss visible.
 - It does not change the primary test in (b).
 - **After amendment 1 (25 Nov 2026), the low-exposure group has 16 firms**: the 4 from B1 plus 12 chip/optical makers from B2. Four of them name Huawei only in a FY2020 10-K and are shown flagged.
+- **Reported twice (decided 25 Nov 2026, before any forecast):** with all 16 low-exposure firms, and **without the four FY2020-only firms** (Marvell, Cirrus Logic, Alpha & Omega, Xilinx), 12 firms. Reason: their group membership comes from sentences written after the event.
 
 ## (f) Primary donors = chip and optical-component makers only (decided by Penelope, 25 Nov 2026)
 

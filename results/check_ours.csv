@@ -1,0 +1,65 @@
+firm,group,origin,q_to_origin,gaps,Q4_derived,yr_tests,yr_fail,revised,revised>0.5%,late>65d,jumps,jump_quarters,tag_conflicts,conflict_quarters,tags_used,tag_switches
+Neophotonics,Exposed (primary),2019 Q1,36,0,1,8,0,2,2,14,0,,0,,"SGN:32, EX:4",1
+Inphi,Exposed (primary),2019 Q1,36,0,2,8,0,5,5,7,3,"2011 Q3, 2014 Q4, 2018 Q1",0,,"R:32, EX:4",3
+Lumentum,Exposed (secondary),2019 Q3,23,0,0,5,0,0,0,8,1,2018 Q2,0,,"SRN:19, IN:3, R:1",2
+Qorvo,Exposed (primary),2019 Q4,24,0,0,6,0,2,2,5,3,"2015 Q1, 2015 Q3, 2015 Q4",2,"2015 Q1, 2015 Q2","SRN:18, R:6",3
+Micron Technology,Exposed (primary),2019 Q2,39,3,0,9,0,0,0,3,1,2014 Q1,0,,"SRN:36, EX:2, R:1",2
+Finisar,Exposed (primary),2019 Q4,36,0,0,9,0,0,0,4,0,,0,,"R:24, SRN:8, EX:4",16
+MACOM,Low exposure,2019 Q2,34,0,1,8,1,13,13,7,2,"2015 Q4, 2016 Q1",0,,"SRN:29, R:5",7
+Skyworks Solutions,Low exposure,2019 Q2,41,0,2,9,0,5,0,1,0,,0,,"SRN:39, R:2",1
+Broadcom,Low exposure,2019 Q2,38,0,0,9,0,0,0,4,2,"2014 Q3, 2016 Q2",0,,"SRN:33, R:3, EX:2",2
+Qualcomm,Low exposure,2019 Q2,44,0,2,10,0,10,2,0,0,,0,,R:44,0
+Intel,Donor (primary),2019 Q1,44,0,11,10,0,0,0,0,0,,0,,"SRN:41, EX:3",1
+Enphase Energy,Donor (sensitivity),2019 Q1,33,0,1,8,0,0,0,7,2,"2011 Q3, 2015 Q4",0,,"SRN:28, EX:5",1
+Ambarella,Donor (primary),2020 Q1,31,0,8,7,0,0,0,4,0,,0,,"R:27, EX:4",1
+Microchip Technology,Donor (primary),2019 Q4,44,0,2,11,0,8,1,0,1,2017 Q1,0,,"SRN:40, IN:2, R:2",2
+Advanced Energy Industries,Donor (sensitivity),2019 Q1,36,0,7,8,5,10,10,4,17,"2010 Q3, 2010 Q4, 2011 Q1, 2011 Q4, 2012 Q1, 2012 Q4, 2013 Q1, 2013 Q4, 2014 Q1, 2014 Q4, 2015 Q1, 2015 Q4, 2017 Q1, 2017 Q4, 2018 Q1, 2018 Q4, 2019 Q1",0,,"SRN:29, R:5, EX:2",11
+Advanced Micro Devices,Donor (primary),2019 Q1,40,0,2,9,1,4,4,1,1,2009 Q4,4,"2017 Q1, 2017 Q2, 2017 Q3, 2017 Q4","SGN:19, SRN:17, EX:4",10
+Amkor Technology,Donor (sensitivity),2019 Q1,40,0,8,9,1,4,3,2,1,2016 Q1,3,"2017 Q1, 2017 Q2, 2017 Q3","SRN:35, EX:4, R:1",3
+Amphenol,Donor (sensitivity),2019 Q1,44,0,2,10,0,7,0,0,0,,0,,"SGN:39, EX:5",1
+Analog Devices,Donor (primary),2019 Q2,44,0,2,10,1,4,4,0,0,,4,"2018 Q1, 2018 Q2, 2018 Q3, 2018 Q4","SRN:40, R:2, EX:2",2
+AXT,Donor (sensitivity),2019 Q1,36,0,2,8,1,1,1,11,0,,0,,"R:33, EX:3",3
+Bel Fuse,Donor (sensitivity),2019 Q1,36,0,4,8,1,1,1,12,4,"2013 Q2, 2014 Q3, 2014 Q4, 2015 Q1",0,,"SGN:20, R:11, EX:5",6
+Benchmark Electronics,Donor (sensitivity),2019 Q1,41,0,3,10,1,13,11,1,0,,11,"2016 Q1, 2016 Q3, 2016 Q4, 2017 Q1, 2017 Q2, 2017 Q3 …","SRN:36, EX:5",1
+CMC Materials,Donor (sensitivity),2019 Q2,40,0,2,9,0,0,0,1,1,2019 Q1,0,,"SGN:36, EX:2, IN:1, R:1",3
+CTS,Donor (sensitivity),2019 Q1,36,0,3,8,1,8,8,4,2,"2013 Q4, 2014 Q1",0,,"SGN:34, R:2",1
+Diodes,Donor (primary),2019 Q1,40,0,2,9,0,2,1,2,0,,2,"2013 Q2, 2014 Q2","SRN:35, EX:4, R:1",3
+First Solar,Donor (sensitivity),2019 Q1,44,0,11,10,1,6,4,0,21,"2008 Q4, 2009 Q3, 2009 Q4, 2011 Q3, 2012 Q2, 2012 Q3, 2012 Q4, 2013 Q2, 2013 Q3, 2014 Q1, 2014 Q2, 2014 Q4, 2015 Q1, 2015 Q2, 2016 Q3, 2017 Q1, 2017 Q4, 2018 Q1, 2018 Q2, 2018 Q3, 2018 Q4",0,,"SRN:30, SGN:10, R:4",2
+Formfactor,Donor (sensitivity),2019 Q1,36,0,2,8,0,1,0,9,4,"2011 Q4, 2012 Q2, 2016 Q2, 2016 Q3",0,,"SRN:30, EX:5, R:1",3
+IEC Electronics,Donor (sensitivity),2019 Q2,36,0,1,8,0,8,8,12,1,2018 Q2,0,,"SRN:32, R:2, EX:2",2
+IPG Photonics,Donor (sensitivity),2019 Q1,37,0,0,9,0,0,0,5,1,2010 Q4,0,,"SRN:32, EX:5",1
+Jabil,Donor (sensitivity),2019 Q2,38,0,9,9,1,4,4,3,0,,0,,"SRN:35, EX:2, R:1",2
+Key Tronic,Donor (sensitivity),2019 Q3,35,0,0,8,1,3,3,11,1,2015 Q2,0,,"SRN:32, R:3",1
+Kimball Electronics,Donor (sensitivity),2019 Q3,23,0,0,5,0,0,0,4,0,,0,,"SRN:20, EX:3",1
+Lattice Semiconductor,Donor (primary),2019 Q1,29,4,1,7,0,5,5,5,0,,1,2011 Q2,"R:14, SRN:10, EX:5",11
+Magnachip Semiconductor,Donor (primary),2019 Q1,36,0,1,8,1,8,7,11,0,,0,,"R:34, EX:2",2
+Maxim Integrated Products,Donor (primary),2019 Q3,39,0,0,9,1,4,4,2,0,,0,,"R:21, SGN:15, EX:3",15
+Methode Electronics,Donor (sensitivity),2019 Q4,36,0,2,9,0,7,0,4,0,,0,,"SRN:33, EX:3",1
+Monolithic Power Systems,Donor (primary),2019 Q1,36,0,3,8,0,0,0,6,0,,0,,"R:23, SRN:8, EX:5",8
+Nortech Systems,Donor (sensitivity),2019 Q1,36,0,9,8,0,4,0,12,0,,0,,"SRN:31, EX:4, R:1",2
+NVIDIA,Donor (primary),2020 Q1,44,0,2,10,0,4,0,0,3,"2009 Q4, 2010 Q1, 2019 Q4",0,,"R:43, EX:1",2
+OSI Systems,Donor (sensitivity),2019 Q3,35,0,8,8,0,0,0,5,0,,0,,"R:24, SRN:8, IN:3",2
+Photronics,Donor (sensitivity),2019 Q2,36,0,2,8,0,0,0,8,0,,0,,"SGN:32, R:2, EX:2",2
+Plexus,Donor (sensitivity),2019 Q2,40,0,4,9,2,4,4,2,4,"2013 Q4, 2014 Q1, 2014 Q4, 2015 Q1",2,"2019 Q1, 2019 Q2","SRN:36, R:2, EX:2",5
+Power Integrations,Donor (primary),2019 Q1,40,0,2,9,0,4,3,1,0,,0,,"R:32, SRN:8",14
+Rambus,Donor (sensitivity),2019 Q1,40,0,2,9,0,0,0,1,5,"2010 Q1, 2010 Q2, 2010 Q4, 2011 Q3, 2018 Q1",0,,"SRN:37, IN:3",1
+Sanmina,Donor (sensitivity),2019 Q2,38,0,9,9,0,0,0,4,0,,0,,"SRN:33, R:5",3
+Silicon Laboratories,Donor (primary),2019 Q1,32,4,8,7,1,8,8,1,0,,0,,"SRN:27, EX:5",1
+SMTC,Donor (sensitivity),2019 Q1,28,4,7,6,0,7,7,8,3,"2012 Q2, 2017 Q1, 2018 Q4",3,"2017 Q1, 2017 Q2, 2017 Q3","R:23, IN:5",1
+Sunpower,Donor (sensitivity),2019 Q1,32,4,6,7,1,8,8,3,8,"2011 Q4, 2012 Q1, 2013 Q1, 2014 Q1, 2014 Q2, 2014 Q4, 2017 Q1, 2017 Q3",3,"2017 Q1, 2017 Q2, 2017 Q3","SRN:29, EX:3",3
+Texas Instruments,Donor (primary),2019 Q1,44,0,6,10,0,2,0,0,0,,0,,"SRN:40, EX:4",1
+Ultra Clean,Donor (sensitivity),2019 Q1,36,0,8,8,1,5,0,12,2,"2010 Q4, 2011 Q1",0,,"SRN:32, EX:4",1
+Viavi Solutions,Donor (sensitivity),2019 Q3,39,0,0,9,3,16,15,3,1,2016 Q1,0,,"SRN:35, EX:4",1
+Vicor,Donor (sensitivity),2019 Q1,36,0,2,8,0,0,0,9,0,,0,,"SRN:31, EX:5",1
+ON Semiconductor,Low exposure,2019 Q1,40,0,2,9,0,0,0,1,2,"2011 Q1, 2016 Q4",0,,"R:36, EX:4",3
+MaxLinear,Low exposure,2019 Q1,36,0,2,8,0,0,0,5,2,"2015 Q2, 2015 Q3",0,,"SRN:31, R:5",1
+Semtech,Low exposure,2020 Q1,40,0,2,9,0,0,0,2,0,,0,,"SRN:35, EX:5",1
+Synaptics,Low exposure,2019 Q3,39,0,9,9,0,5,0,2,3,"2013 Q4, 2014 Q4, 2015 Q2",0,,"SRN:34, EX:4, R:1",3
+Cypress,Low exposure,2019 Q1,32,4,7,7,2,7,7,2,1,2016 Q2,2,"2017 Q2, 2017 Q3","SRN:15, R:13, EX:4",8
+DSP Group,Low exposure,2019 Q1,36,0,9,8,0,0,0,12,0,,0,,"R:31, IN:5",1
+Applied Optoelectronics,Low exposure,2019 Q1,29,0,0,7,0,0,0,8,1,2018 Q3,0,,"SRN:24, EX:4, R:1",2
+Cree / Wolfspeed,Low exposure,2019 Q3,39,0,0,9,1,9,9,2,1,2019 Q3,5,"2018 Q3, 2018 Q4, 2019 Q1, 2019 Q2, 2019 Q3","SGN:23, R:13, IN:3",4
+Marvell,Low exposure,2020 Q1,44,0,5,10,2,5,5,4,0,,0,,"R:39, EX:5",1
+Cirrus Logic,Low exposure,2019 Q4,36,0,0,9,0,0,0,4,4,"2011 Q4, 2012 Q4, 2013 Q2, 2013 Q3",0,,"SRN:32, EX:4",1
+Alpha & Omega,Low exposure,2019 Q3,35,0,8,8,0,0,0,5,0,,0,,"SGN:26, R:6, EX:3",7
+Xilinx,Low exposure,2019 Q4,40,0,2,10,0,4,4,2,0,,4,"2018 Q1, 2018 Q2, 2018 Q3, 2018 Q4","SRN:38, R:2",1

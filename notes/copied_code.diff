@@ -1,0 +1,335 @@
+--- forecast-gap/src/download_edgar.py
++++ huawei-exposure/src/download_edgar.py
+@@ -38,15 +38,15 @@
+ 
+ # --- 2. Read the email from .env -----------------------------------------
+ 
+-def read_email():
+-    """Return SEC_EMAIL from the .env file (a simple NAME=value file)."""
++def read_user_agent():
++    """Return SEC_USER_AGENT (name and email) from the .env file (a simple NAME=value file)."""
+     env_file = PROJECT / ".env"
+     if not env_file.exists():
+         raise SystemExit("No .env file. Copy .env.example to .env and add your email.")
+     for line in env_file.read_text().splitlines():
+-        if line.startswith("SEC_EMAIL="):
++        if line.startswith("SEC_USER_AGENT="):
+             return line.split("=", 1)[1].strip()
+-    raise SystemExit("SEC_EMAIL is missing from .env")
++    raise SystemExit("SEC_USER_AGENT is missing from .env")
+ 
+ 
+ # --- 3. Download each company ----------------------------------------------
+@@ -55,7 +55,7 @@
+     RAW_DIR.mkdir(parents=True, exist_ok=True)
+ 
+     # The SEC asks every program to say who it is: a name and an email.
+-    headers = {"User-Agent": f"<name> {read_email()}"}
++    headers = {"User-Agent": read_user_agent()}
+ 
+     refresh = "--refresh" in sys.argv
+     for cik, name in COMPANIES.items():
+--- forecast-gap/src/companies.py
++++ huawei-exposure/src/companies.py
+@@ -49,14 +49,142 @@
+                          "Baking soda, detergent, personal care; everyday purchases"),
+     "General Mills":    ("FMCG", [("0000040704", "General Mills")],
+                          "Packaged foods (cereal, snacks, pet food); everyday purchases"),
+-    # forecast-gap (Project 5), added 24 Nov 2026: NOT one of the 20 Project 2 companies.
+-    # Its type is a label only (B4 and AutoETS don't use types); it never enters the yardstick pool.
+-    "Meta":             ("Growth tech", [("0001326801", "Meta Platforms")],
+-                         "Online advertising (Facebook, Instagram); Facebook Inc. until Oct 2021"),
++
++# huawei-exposure (Project 6), added 25 Nov 2026: the frozen firms (notes/frozen-lists.md + amendment 1).
++# The type is the frozen group, a label only (B4 and AutoETS do not use types); they never enter the yardstick pool.
++# Broadcom is stitched from three SEC IDs (design-v2 (c), results/stitching.csv), like Alphabet above.
++    "Neophotonics": ("Exposed (primary)", [('0001227025', 'NEOPHOTONICS CORP')],
++        "optical-component; basis: 10-K read"),
++    "Inphi": ("Exposed (primary)", [('0001160958', 'INPHI Corp')],
++        "chip; basis: 10-K read"),
++    "Lumentum": ("Exposed (secondary)", [('0001633978', 'Lumentum Holdings Inc.')],
++        "optical-component; basis: 10-K read"),
++    "Qorvo": ("Exposed (primary)", [('0001604778', 'Qorvo, Inc.')],
++        "chip; basis: 10-K read"),
++    "Micron Technology": ("Exposed (primary)", [('0000723125', 'MICRON TECHNOLOGY INC')],
++        "chip; basis: 10-K read"),
++    "Finisar": ("Exposed (primary)", [('0001094739', 'FINISAR CORP')],
++        "optical-component; basis: 10-K read"),
++    "MACOM": ("Low exposure", [('0001493594', 'MACOM Technology Solutions Holdings, Inc.')],
++        "chip; basis: 10-K read"),
++    "Skyworks Solutions": ("Low exposure", [('0000004127', 'SKYWORKS SOLUTIONS, INC.')],
++        "chip; basis: 10-K read"),
++    "Broadcom": ("Low exposure", [('0001441634', 'Avago Technologies LTD'), ('0001649338', 'Broadcom Pte. Ltd.'), ('0001730168', 'Broadcom Inc.')],
++        "chip; basis: 10-K read"),
++    "Qualcomm": ("Low exposure", [('0000804328', 'QUALCOMM INC/DE')],
++        "chip; basis: 10-K read"),
++    "Intel": ("Donor (primary)", [('0000050863', 'INTEL CORP')],
++        "chip; basis: 10-K read"),
++    "Enphase Energy": ("Donor (sensitivity)", [('0001463101', 'Enphase Energy, Inc.')],
++        "solar; basis: 10-K read"),
++    "Ambarella": ("Donor (primary)", [('0001280263', 'AMBARELLA INC')],
++        "chip; basis: 10-K read"),
++    "Microchip Technology": ("Donor (primary)", [('0000827054', 'MICROCHIP TECHNOLOGY INC')],
++        "chip; basis: 10-K read"),
++    "Advanced Energy Industries": ("Donor (sensitivity)", [('0000927003', 'ADVANCED ENERGY INDUSTRIES INC')],
++        "equipment; basis: from memory"),
++    "Advanced Micro Devices": ("Donor (primary)", [('0000002488', 'ADVANCED MICRO DEVICES INC')],
++        "chip; basis: name"),
++    "Amkor Technology": ("Donor (sensitivity)", [('0001047127', 'AMKOR TECHNOLOGY, INC.')],
++        "contract manufacturer; basis: 10-K read"),
++    "Amphenol": ("Donor (sensitivity)", [('0000820313', 'AMPHENOL CORP /DE/')],
++        "other; basis: from memory"),
++    "Analog Devices": ("Donor (primary)", [('0000006281', 'ANALOG DEVICES INC')],
++        "chip; basis: name"),
++    "AXT": ("Donor (sensitivity)", [('0001051627', 'AXT INC')],
++        "equipment; basis: 10-K read"),
++    "Bel Fuse": ("Donor (sensitivity)", [('0000729580', 'BEL FUSE INC /NJ')],
++        "other; basis: from memory"),
++    "Benchmark Electronics": ("Donor (sensitivity)", [('0000863436', 'BENCHMARK ELECTRONICS INC')],
++        "contract manufacturer; basis: from memory"),
++    "CMC Materials": ("Donor (sensitivity)", [('0001102934', 'CMC Materials, Inc.')],
++        "equipment; basis: name"),
++    "CTS": ("Donor (sensitivity)", [('0000026058', 'CTS CORP')],
++        "other; basis: from memory"),
++    "Diodes": ("Donor (primary)", [('0000029002', 'DIODES INC /DEL/')],
++        "chip; basis: name"),
++    "First Solar": ("Donor (sensitivity)", [('0001274494', 'FIRST SOLAR, INC.')],
++        "solar; basis: name"),
++    "Formfactor": ("Donor (sensitivity)", [('0001039399', 'FORMFACTOR INC')],
++        "equipment; basis: from memory"),
++    "IEC Electronics": ("Donor (sensitivity)", [('0000049728', 'IEC ELECTRONICS CORP')],
++        "contract manufacturer; basis: from memory"),
++    "IPG Photonics": ("Donor (sensitivity)", [('0001111928', 'IPG PHOTONICS CORP')],
++        "sensitivity from rules; basis: 10-K read"),
++    "Jabil": ("Donor (sensitivity)", [('0000898293', 'JABIL INC')],
++        "contract manufacturer; basis: from memory"),
++    "Key Tronic": ("Donor (sensitivity)", [('0000719733', 'KEY TRONIC CORP')],
++        "contract manufacturer; basis: from memory"),
++    "Kimball Electronics": ("Donor (sensitivity)", [('0001606757', 'Kimball Electronics, Inc.')],
++        "contract manufacturer; basis: from memory"),
++    "Lattice Semiconductor": ("Donor (primary)", [('0000855658', 'LATTICE SEMICONDUCTOR CORP')],
++        "chip; basis: name"),
++    "Magnachip Semiconductor": ("Donor (primary)", [('0001325702', 'MAGNACHIP SEMICONDUCTOR Corp')],
++        "chip; basis: name"),
++    "Maxim Integrated Products": ("Donor (primary)", [('0000743316', 'MAXIM INTEGRATED PRODUCTS INC')],
++        "chip; basis: from memory"),
++    "Methode Electronics": ("Donor (sensitivity)", [('0000065270', 'METHODE ELECTRONICS INC')],
++        "other; basis: from memory"),
++    "Monolithic Power Systems": ("Donor (primary)", [('0001280452', 'MONOLITHIC POWER SYSTEMS, INC.')],
++        "chip; basis: 10-K read"),
++    "Nortech Systems": ("Donor (sensitivity)", [('0000722313', 'NORTECH SYSTEMS INC')],
++        "contract manufacturer; basis: from memory"),
++    "NVIDIA": ("Donor (primary)", [('0001045810', 'NVIDIA CORP')],
++        "chip; basis: from memory"),
++    "OSI Systems": ("Donor (sensitivity)", [('0001039065', 'OSI SYSTEMS INC')],
++        "sensitivity from rules; basis: from memory"),
++    "Photronics": ("Donor (sensitivity)", [('0000810136', 'PHOTRONICS INC')],
++        "equipment; basis: from memory"),
++    "Plexus": ("Donor (sensitivity)", [('0000785786', 'PLEXUS CORP')],
++        "contract manufacturer; basis: from memory"),
++    "Power Integrations": ("Donor (primary)", [('0000833640', 'POWER INTEGRATIONS INC')],
++        "chip; basis: 10-K read"),
++    "Rambus": ("Donor (sensitivity)", [('0000917273', 'RAMBUS INC')],
++        "other; basis: 10-K read"),
++    "Sanmina": ("Donor (sensitivity)", [('0000897723', 'SANMINA CORP')],
++        "contract manufacturer; basis: from memory"),
++    "Silicon Laboratories": ("Donor (primary)", [('0001038074', 'SILICON LABORATORIES INC.')],
++        "chip; basis: name"),
++    "SMTC": ("Donor (sensitivity)", [('0001108320', 'SMTC CORP')],
++        "contract manufacturer; basis: from memory"),
++    "Sunpower": ("Donor (sensitivity)", [('0000867773', 'SUNPOWER CORP')],
++        "solar; basis: name"),
++    "Texas Instruments": ("Donor (primary)", [('0000097476', 'TEXAS INSTRUMENTS INC')],
++        "chip; basis: from memory"),
++    "Ultra Clean": ("Donor (sensitivity)", [('0001275014', 'Ultra Clean Holdings, Inc.')],
++        "equipment; basis: from memory"),
++    "Viavi Solutions": ("Donor (sensitivity)", [('0000912093', 'VIAVI SOLUTIONS INC.')],
++        "sensitivity from rules; basis: 10-K read"),
++    "Vicor": ("Donor (sensitivity)", [('0000751978', 'VICOR CORP')],
++        "other; basis: 10-K read"),
++    "ON Semiconductor": ("Low exposure", [('0001097864', 'ON SEMICONDUCTOR CORP')],
++        "chip/optical; amendment 1"),
++    "MaxLinear": ("Low exposure", [('0001288469', 'MAXLINEAR, INC')],
++        "chip/optical; amendment 1"),
++    "Semtech": ("Low exposure", [('0000088941', 'SEMTECH CORP')],
++        "chip/optical; amendment 1"),
++    "Synaptics": ("Low exposure", [('0000817720', 'SYNAPTICS Inc')],
++        "chip/optical; amendment 1"),
++    "Cypress": ("Low exposure", [('0000791915', 'CYPRESS SEMICONDUCTOR CORP /DE/')],
++        "chip/optical; amendment 1"),
++    "DSP Group": ("Low exposure", [('0000915778', 'DSP GROUP INC /DE/')],
++        "chip/optical; amendment 1"),
++    "Applied Optoelectronics": ("Low exposure", [('0001158114', 'APPLIED OPTOELECTRONICS, INC.')],
++        "chip/optical; amendment 1"),
++    "Cree / Wolfspeed": ("Low exposure", [('0000895419', 'WOLFSPEED, INC.')],
++        "chip/optical; amendment 1"),
++    "Marvell": ("Low exposure", [('0001058057', 'MARVELL TECHNOLOGY GROUP LTD')],
++        "chip/optical; amendment 1; FY2020 10-K only"),
++    "Cirrus Logic": ("Low exposure", [('0000772406', 'CIRRUS LOGIC, INC.')],
++        "chip/optical; amendment 1; FY2020 10-K only"),
++    "Alpha & Omega": ("Low exposure", [('0001387467', 'ALPHA & OMEGA SEMICONDUCTOR Ltd')],
++        "chip/optical; amendment 1; FY2020 10-K only"),
++    "Xilinx": ("Low exposure", [('0000743988', 'XILINX INC')],
++        "chip/optical; amendment 1; FY2020 10-K only"),
+ }
+ 
+-# The 20 Project 2 companies (the yardstick pool), without Meta.
+-PROJECT2_COMPANIES = [c for c in COMPANIES if c != "Meta"]
++# The 20 Project 2 companies (the yardstick pool): the ones with a Project 2 type.
++PROJECT2_COMPANIES = [c for c in COMPANIES if COMPANIES[c][0] in TYPES]
+ 
+ 
+ # Series that start later than the data (approved 17 Nov 2026):
+--- forecast-gap/src/build_quarterly.py
++++ huawei-exposure/src/build_quarterly.py
+@@ -72,6 +72,74 @@
+     # forecast-gap, added 24 Nov 2026: Revenues covers 2010-2018 Q3, EX 2016 Q4 on;
+     # the same number on all 6 quarters both cover. Advertising/other revenue are parts.
+     "Meta Platforms": [EX, R],
++    # huawei-exposure, added 25 Nov 2026: provisional tag order for every new entity (confirm per firm with
++    # list_revenue_tags.py and check_data.py before forecasting; same order as src/eligibility_exact.py).
++    "NEOPHOTONICS CORP": [EX, R, IN, SRN, SGN],
++    "INPHI Corp": [EX, R, IN, SRN, SGN],
++    "Lumentum Holdings Inc.": [EX, R, IN, SRN, SGN],
++    "Qorvo, Inc.": [EX, R, IN, SRN, SGN],
++    "MICRON TECHNOLOGY INC": [EX, R, IN, SRN, SGN],
++    "FINISAR CORP": [EX, R, IN, SRN, SGN],
++    "MACOM Technology Solutions Holdings, Inc.": [EX, R, IN, SRN, SGN],
++    "SKYWORKS SOLUTIONS, INC.": [EX, R, IN, SRN, SGN],
++    "Avago Technologies LTD": [EX, R, IN, SRN, SGN],
++    "Broadcom Pte. Ltd.": [EX, R, IN, SRN, SGN],
++    "Broadcom Inc.": [EX, R, IN, SRN, SGN],
++    "QUALCOMM INC/DE": [EX, R, IN, SRN, SGN],
++    "INTEL CORP": [EX, R, IN, SRN, SGN],
++    "Enphase Energy, Inc.": [EX, R, IN, SRN, SGN],
++    "AMBARELLA INC": [EX, R, IN, SRN, SGN],
++    "MICROCHIP TECHNOLOGY INC": [EX, R, IN, SRN, SGN],
++    "ADVANCED ENERGY INDUSTRIES INC": [EX, R, IN, SRN, SGN],
++    "ADVANCED MICRO DEVICES INC": [EX, R, IN, SRN, SGN],
++    "AMKOR TECHNOLOGY, INC.": [EX, R, IN, SRN, SGN],
++    "AMPHENOL CORP /DE/": [EX, R, IN, SRN, SGN],
++    "ANALOG DEVICES INC": [EX, R, IN, SRN, SGN],
++    "AXT INC": [EX, R, IN, SRN, SGN],
++    "BEL FUSE INC /NJ": [EX, R, IN, SRN, SGN],
++    "BENCHMARK ELECTRONICS INC": [EX, R, IN, SRN, SGN],
++    "CMC Materials, Inc.": [EX, R, IN, SRN, SGN],
++    "CTS CORP": [EX, R, IN, SRN, SGN],
++    "DIODES INC /DEL/": [EX, R, IN, SRN, SGN],
++    "FIRST SOLAR, INC.": [EX, R, IN, SRN, SGN],
++    "FORMFACTOR INC": [EX, R, IN, SRN, SGN],
++    "IEC ELECTRONICS CORP": [EX, R, IN, SRN, SGN],
++    "IPG PHOTONICS CORP": [EX, R, IN, SRN, SGN],
++    "JABIL INC": [EX, R, IN, SRN, SGN],
++    "KEY TRONIC CORP": [EX, R, IN, SRN, SGN],
++    "Kimball Electronics, Inc.": [EX, R, IN, SRN, SGN],
++    "LATTICE SEMICONDUCTOR CORP": [EX, R, IN, SRN, SGN],
++    "MAGNACHIP SEMICONDUCTOR Corp": [EX, R, IN, SRN, SGN],
++    "MAXIM INTEGRATED PRODUCTS INC": [EX, R, IN, SRN, SGN],
++    "METHODE ELECTRONICS INC": [EX, R, IN, SRN, SGN],
++    "MONOLITHIC POWER SYSTEMS, INC.": [EX, R, IN, SRN, SGN],
++    "NORTECH SYSTEMS INC": [EX, R, IN, SRN, SGN],
++    "NVIDIA CORP": [EX, R, IN, SRN, SGN],
++    "OSI SYSTEMS INC": [EX, R, IN, SRN, SGN],
++    "PHOTRONICS INC": [EX, R, IN, SRN, SGN],
++    "PLEXUS CORP": [EX, R, IN, SRN, SGN],
++    "POWER INTEGRATIONS INC": [EX, R, IN, SRN, SGN],
++    "RAMBUS INC": [EX, R, IN, SRN, SGN],
++    "SANMINA CORP": [EX, R, IN, SRN, SGN],
++    "SILICON LABORATORIES INC.": [EX, R, IN, SRN, SGN],
++    "SMTC CORP": [EX, R, IN, SRN, SGN],
++    "SUNPOWER CORP": [EX, R, IN, SRN, SGN],
++    "TEXAS INSTRUMENTS INC": [EX, R, IN, SRN, SGN],
++    "Ultra Clean Holdings, Inc.": [EX, R, IN, SRN, SGN],
++    "VIAVI SOLUTIONS INC.": [EX, R, IN, SRN, SGN],
++    "VICOR CORP": [EX, R, IN, SRN, SGN],
++    "ON SEMICONDUCTOR CORP": [EX, R, IN, SRN, SGN],
++    "MAXLINEAR, INC": [EX, R, IN, SRN, SGN],
++    "SEMTECH CORP": [EX, R, IN, SRN, SGN],
++    "SYNAPTICS Inc": [EX, R, IN, SRN, SGN],
++    "CYPRESS SEMICONDUCTOR CORP /DE/": [EX, R, IN, SRN, SGN],
++    "DSP GROUP INC /DE/": [EX, R, IN, SRN, SGN],
++    "APPLIED OPTOELECTRONICS, INC.": [EX, R, IN, SRN, SGN],
++    "WOLFSPEED, INC.": [EX, R, IN, SRN, SGN],
++    "MARVELL TECHNOLOGY GROUP LTD": [EX, R, IN, SRN, SGN],
++    "CIRRUS LOGIC, INC.": [EX, R, IN, SRN, SGN],
++    "ALPHA & OMEGA SEMICONDUCTOR Ltd": [EX, R, IN, SRN, SGN],
++    "XILINX INC": [EX, R, IN, SRN, SGN],
+ }
+ 
+ # Company -> list of (raw file, entity name, tags in order of preference).
+--- forecast-gap/src/list_revenue_tags.py
++++ huawei-exposure/src/list_revenue_tags.py
+@@ -26,6 +26,73 @@
+     "Google Inc.": "CIK0001288776.json",
+     "Alphabet": "CIK0001652044.json",
+     "Meta": "CIK0001326801.json",        # forecast-gap, added 24 Nov 2026
++    # huawei-exposure, added 25 Nov 2026
++    "NEOPHOTONICS CORP": "CIK0001227025.json",
++    "INPHI Corp": "CIK0001160958.json",
++    "Lumentum Holdings Inc.": "CIK0001633978.json",
++    "Qorvo, Inc.": "CIK0001604778.json",
++    "MICRON TECHNOLOGY INC": "CIK0000723125.json",
++    "FINISAR CORP": "CIK0001094739.json",
++    "MACOM Technology Solutions Holdings, Inc.": "CIK0001493594.json",
++    "SKYWORKS SOLUTIONS, INC.": "CIK0000004127.json",
++    "Avago Technologies LTD": "CIK0001441634.json",
++    "Broadcom Pte. Ltd.": "CIK0001649338.json",
++    "Broadcom Inc.": "CIK0001730168.json",
++    "QUALCOMM INC/DE": "CIK0000804328.json",
++    "INTEL CORP": "CIK0000050863.json",
++    "Enphase Energy, Inc.": "CIK0001463101.json",
++    "AMBARELLA INC": "CIK0001280263.json",
++    "MICROCHIP TECHNOLOGY INC": "CIK0000827054.json",
++    "ADVANCED ENERGY INDUSTRIES INC": "CIK0000927003.json",
++    "ADVANCED MICRO DEVICES INC": "CIK0000002488.json",
++    "AMKOR TECHNOLOGY, INC.": "CIK0001047127.json",
++    "AMPHENOL CORP /DE/": "CIK0000820313.json",
++    "ANALOG DEVICES INC": "CIK0000006281.json",
++    "AXT INC": "CIK0001051627.json",
++    "BEL FUSE INC /NJ": "CIK0000729580.json",
++    "BENCHMARK ELECTRONICS INC": "CIK0000863436.json",
++    "CMC Materials, Inc.": "CIK0001102934.json",
++    "CTS CORP": "CIK0000026058.json",
++    "DIODES INC /DEL/": "CIK0000029002.json",
++    "FIRST SOLAR, INC.": "CIK0001274494.json",
++    "FORMFACTOR INC": "CIK0001039399.json",
++    "IEC ELECTRONICS CORP": "CIK0000049728.json",
++    "IPG PHOTONICS CORP": "CIK0001111928.json",
++    "JABIL INC": "CIK0000898293.json",
++    "KEY TRONIC CORP": "CIK0000719733.json",
++    "Kimball Electronics, Inc.": "CIK0001606757.json",
++    "LATTICE SEMICONDUCTOR CORP": "CIK0000855658.json",
++    "MAGNACHIP SEMICONDUCTOR Corp": "CIK0001325702.json",
++    "MAXIM INTEGRATED PRODUCTS INC": "CIK0000743316.json",
++    "METHODE ELECTRONICS INC": "CIK0000065270.json",
++    "MONOLITHIC POWER SYSTEMS, INC.": "CIK0001280452.json",
++    "NORTECH SYSTEMS INC": "CIK0000722313.json",
++    "NVIDIA CORP": "CIK0001045810.json",
++    "OSI SYSTEMS INC": "CIK0001039065.json",
++    "PHOTRONICS INC": "CIK0000810136.json",
++    "PLEXUS CORP": "CIK0000785786.json",
++    "POWER INTEGRATIONS INC": "CIK0000833640.json",
++    "RAMBUS INC": "CIK0000917273.json",
++    "SANMINA CORP": "CIK0000897723.json",
++    "SILICON LABORATORIES INC.": "CIK0001038074.json",
++    "SMTC CORP": "CIK0001108320.json",
++    "SUNPOWER CORP": "CIK0000867773.json",
++    "TEXAS INSTRUMENTS INC": "CIK0000097476.json",
++    "Ultra Clean Holdings, Inc.": "CIK0001275014.json",
++    "VIAVI SOLUTIONS INC.": "CIK0000912093.json",
++    "VICOR CORP": "CIK0000751978.json",
++    "ON SEMICONDUCTOR CORP": "CIK0001097864.json",
++    "MAXLINEAR, INC": "CIK0001288469.json",
++    "SEMTECH CORP": "CIK0000088941.json",
++    "SYNAPTICS Inc": "CIK0000817720.json",
++    "CYPRESS SEMICONDUCTOR CORP /DE/": "CIK0000791915.json",
++    "DSP GROUP INC /DE/": "CIK0000915778.json",
++    "APPLIED OPTOELECTRONICS, INC.": "CIK0001158114.json",
++    "WOLFSPEED, INC.": "CIK0000895419.json",
++    "MARVELL TECHNOLOGY GROUP LTD": "CIK0001058057.json",
++    "CIRRUS LOGIC, INC.": "CIK0000772406.json",
++    "ALPHA & OMEGA SEMICONDUCTOR Ltd": "CIK0001387467.json",
++    "XILINX INC": "CIK0000743988.json",
+ }
+ 
+ # A tag is "revenue-like" if its name contains "Revenue" but none of
