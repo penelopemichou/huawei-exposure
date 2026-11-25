@@ -1,6 +1,6 @@
-# Permutation test setup — DRAFT (choices by Penelope, 25 Nov 2026; not run)
+# Permutation test setup — FIXED on 25 Nov 2026 (choices by Penelope; not run)
 
-The choices below were made by Penelope on 25 Nov 2026, before any forecast. The note becomes **fixed** when Penelope writes "fixed on <date>" at the end. It must be fixed, and committed, before any forecast is run (design-v2 (b)).
+The choices below were made by Penelope on 25 Nov 2026, before any forecast. **Fixed on 25 Nov 2026** (see the end of this note). It must be committed before any forecast is run (design-v2 (b)). Nothing below may change after a forecast has been run.
 
 ## Firms
 
@@ -42,4 +42,9 @@ Descriptive only: no causal claim.
 
 ## Fixed
 
-(empty: Penelope writes "fixed on <date>" here)
+**Fixed on 25 Nov 2026** by Penelope, before any forecast. Last commit before fixing: `86a8e28`.
+
+- Firms in the primary test at h = 1, from `notes/frozen-lists.md` (frozen on 25 Nov 2026): N = 19 (n = 5 exposed + 14 primary donors).
+- Exact enumeration: C(19, 5) = 11,628 ways to choose the five "exposed" firms.
+- Expected rank-sum if exposure made no difference: n × (N + 1) ÷ 2 = 5 × 20 ÷ 2 = 50.
+- If a firm drops out (no h = 1 forecast from both rules), N, the enumeration and the expected rank-sum are recomputed, and the firm is listed.

@@ -1,6 +1,6 @@
-# Frozen lists — DRAFT (prepared 25 Nov 2026; NOT frozen)
+# Frozen lists — FROZEN on 25 Nov 2026
 
-**Status: DRAFT.** These lists become frozen only when Penelope writes "frozen" with a date below, **before** any forecast is run. After freezing, no firm is added, removed or moved between groups.
+**Status: FROZEN on 25 Nov 2026 (Penelope's decision), before any forecast was run.** No firm is added, removed or moved between groups from now on. A change needs a new, dated section explaining why, written before any result is seen.
 
 Rules: `notes/donor-rule.md` (label test, groups, dose), `notes/design-v2.md` (h = 1 primary, Lumentum SECONDARY, stitching rule). Evidence per firm: `results/dropped_donors.csv`, `results/donor_screen.csv`, `notes/decision-rows.md`. Sub-sector tags: `results/sub_sector_tags.csv`.
 
@@ -44,4 +44,6 @@ Mellanox, Kulicke & Soffa.
 
 ## Frozen
 
-(empty: Penelope writes "frozen on <date>" here)
+**Frozen on 25 Nov 2026** by Penelope, before any forecast. Last commit before freezing: `86a8e28`.
+
+Primary test at h = 1: 5 exposed firms (NeoPhotonics, Inphi, Qorvo, Micron, Finisar) and 14 primary donors, 19 firms in all.

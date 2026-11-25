@@ -229,6 +229,18 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
 - **Result:** the same fiscal calendar and 9 of 9 overlapping quarters identical, so the stitch qualifies under design-v2 (c). Stitched: 38 quarters, no gaps; unstitched: 10.
 - **Stitching approved by Penelope (25 Nov 2026):** Avago → Broadcom Ltd → Broadcom Inc. (`results/stitching.csv`; newest file wins where they overlap). Broadcom now has 38 quarters and passes the 20-quarter rule. The level jumps (Feb 2016, and from memory Nov 2018) are flagged next to its results. **All 52 firms now pass the pre-flight checks** (Finisar h = 1 only; Lumentum SECONDARY by decision).
 
+## Session 2 log, continued (25 Nov 2026, tenth part), not committed
+
+- Committed `86a8e28` (24 files).
+- **Lists FROZEN on 25 Nov 2026** (`notes/frozen-lists.md`) and **permutation setup FIXED on 25 Nov 2026** (`notes/permutation-setup.md`), by Penelope, before any forecast.
+- Primary test at h = 1: N = 19 (5 exposed + 14 primary donors), exact enumeration C(19, 5) = 11,628, expected rank-sum 50.
+- **Next, in order:**
+  1. commit the freeze ("yes, commit");
+  2. write the predictions (`notes/predictions-before-run.md`) and commit them;
+  3. copy the forecast-gap code (with the one planned `download_edgar.py` edit), with Penelope's go-ahead;
+  4. build the revenue tables;
+  5. run the forecasts.
+
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
 **One row per firm that revised its current-quarter revenue guidance after 16 May 2019.** Firms looked at: the exposed firms, the "low exposure, implied" firms and the donors.
