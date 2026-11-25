@@ -335,7 +335,10 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
   - **Session 0 notes:** Qorvo −6 % sourced (−6.3 %); Skyworks −7 % sourced (−7.3 %); Lumentum −8 % unsourced, not used.
   - **Found, not applied:** Skyworks' "about 12 % of H1 FY2019" is in its 4 June 2019 8-K (earlier marked unsourced). Qorvo's 21 May 8-K says Huawei was 15 % of FY2019 revenue, vs 13 % in the 10-K (the dose stays 13 % by rule).
   - README limit added: no 8-K is not the same as no revision.
-- **Not done yet:** comparison with the predictions (Penelope's call); write-up. Not committed.
+- Committed **`50bb23d`** (guidance-cut step).
+- **README:** Skyworks' ~12 % H1 FY2019 is now sourced to its 4 June 2019 8-K (post-event; grouping uses 10-Ks; Skyworks stays low exposure). Lumentum's −8 % is the unsourced example. Qorvo's 8-K 15 % vs 10-K 13 % noted (the dose uses the 10-K). New limit: the 10 % line is a weak proxy; guidance cuts and model misses measure different things.
+- **Descriptive table** `results/guidance_vs_model_miss.csv`: the six firms with a mid-quarter cut. Qorvo and Inphi cut guidance yet beat both simple forecasts; the four low-exposure cutters fell well below them.
+- **README results section drafted** in `notes/readme-results-draft.md`, with a predictions-vs-outcome list. Shown to Penelope; **not committed, not in the README**.
 
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
