@@ -178,8 +178,23 @@ After the donor screen (`results/donor_screen.csv`), the B2 documents fall into 
 
 ## B3: the Skyworks 10-Q for the quarter ended 29 March 2019 (approved 25 Nov 2026)
 
-Purpose: check whether Penelope's note "about 12 % of H1 FY2019" comes from this 10-Q. Same columns as B1. The whole filing is 4.8 MB (upper bound).
+Purpose: check whether Penelope's note "about 12 % of H1 FY2019" comes from this 10-Q (result: it does not; **unsourced, not used**). Same columns as B1. The whole filing is 4.8 MB (upper bound).
 
 | firm | FY | form | period end | filed | document | search found Huawei | filing total MB | url |
 |---|---|---|---|---|---|---|---|---|
 | Skyworks | 2019 | 10-Q | 2019-03-29 | 2019-05-03 | q21910qmarch292019.htm | not searched (10-Qs were not in the search) | 4.8 | https://www.sec.gov/Archives/edgar/data/4127/000000412719000022/q21910qmarch292019.htm |
+
+## E: 10-Ks to check the class of 8 borderline donors (approved 25 Nov 2026)
+
+Purpose: read the opening of Item 1 ("Business") to set each firm's class (chip / optical-component / contract manufacturer / equipment and materials / solar / other / system or instrument). Limits: 10 MB per file, 60 MB in total.
+
+| firm | FY | form | period end | filed | document | search found Huawei | filing total MB | url |
+|---|---|---|---|---|---|---|---|---|
+| AXT | 2018 | 10-K | 2018-12-31 | 2019-03-11 | axti-20181231x10k.htm | no | 16.6 | https://www.sec.gov/Archives/edgar/data/1051627/000155837019001765/axti-20181231x10k.htm |
+| Amkor | 2018 | 10-K | 2018-12-31 | 2019-02-22 | amkr12311810k.htm | no | 12.3 | https://www.sec.gov/Archives/edgar/data/1047127/000104712719000007/amkr12311810k.htm |
+| Rambus | 2018 | 10-K | 2018-12-31 | 2019-02-22 | rmbs-20181231x10xk.htm | no | 14.3 | https://www.sec.gov/Archives/edgar/data/917273/000091727319000006/rmbs-20181231x10xk.htm |
+| Vicor | 2018 | 10-K | 2018-12-31 | 2019-02-28 | d678844d10k.htm | no | 16.2 | https://www.sec.gov/Archives/edgar/data/751978/000119312519057343/d678844d10k.htm |
+| IPG Photonics | 2018 | 10-K | 2018-12-31 | 2019-02-27 | ipgp-20181231.htm | no | 15.5 | https://www.sec.gov/Archives/edgar/data/1111928/000111192819000035/ipgp-20181231.htm |
+| Viavi | 2018 | 10-K | 2018-06-30 | 2018-08-28 | viavq4fy1810-k.htm | no | 20.1 | https://www.sec.gov/Archives/edgar/data/912093/000091209318000059/viavq4fy1810-k.htm |
+| Power Integrations | 2018 | 10-K | 2018-12-31 | 2019-02-13 | powi-2018123110k.htm | no | 11.1 | https://www.sec.gov/Archives/edgar/data/833640/000083364019000046/powi-2018123110k.htm |
+| Monolithic Power | 2018 | 10-K | 2018-12-31 | 2019-03-01 | mpwr20181231_10k.htm | no | 11.8 | https://www.sec.gov/Archives/edgar/data/1280452/000143774919003798/mpwr20181231_10k.htm |

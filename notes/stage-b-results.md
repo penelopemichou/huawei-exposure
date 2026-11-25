@@ -28,7 +28,7 @@
 - NeoPhotonics 46 % / 41 %: confirmed.
 - Lumentum FY2018 11 %: confirmed.
 - Inphi 2018 14 %: confirmed in the 10-K (no longer "news only").
-- Skyworks "about 12 % of H1 FY2019": **not in either 10-K**, so it stays "not in 10-K".
+- Skyworks "about 12 % of H1 FY2019": not in either 10-K nor in the March 2019 10-Q: **unsourced, not used**.
 
 ## Count of primary exposed firms: warning
 
@@ -77,7 +77,7 @@ Downloads: B2a + B2c 34 documents, **119.0 MB** (limit 120 MB; largest 8.3 MB, X
 - Indirect: **SiTime** ("no direct sales with Huawei … a small amount of revenue attributable to Huawei" via distributors).
 - Competitor/other only: MoSys, Pixelworks, Quantenna, SolarEdge (patent lawsuits with Huawei).
 
-**B3 (Skyworks 10-Q, quarter ended 29 Mar 2019):** 0 mentions of Huawei or HiSilicon, and no 10 %-customer paragraph. **"About 12 % of H1 FY2019" is not in this 10-Q either.** It stays "not found in the SEC filings read".
+**B3 (Skyworks 10-Q, quarter ended 29 Mar 2019):** 0 mentions of Huawei or HiSilicon, and no 10 %-customer paragraph. **"About 12 % of H1 FY2019" is not in this 10-Q either.** **Unsourced, not used.**
 
 **Data check added to the donor screen:** the h = 1 target quarter must end after 16 May 2019 and be reported. Oclaro and Sparton fail it, so **39** firms pass criteria 1–4 with no Huawei hit (was 40).
 

@@ -28,7 +28,8 @@ PROJECT = Path(__file__).resolve().parent.parent
 STAGE_A = PROJECT / "data" / "raw" / "stage_a"
 OUT = PROJECT / "data" / "raw" / "filing_lists"
 LOG = OUT / "request_log.csv"
-LIMITS = {"cree": 2, "random10": 10, "lists80": 100, "revenue7": 7}
+LIMITS = {"cree": 2, "random10": 10, "lists80": 100, "revenue7": 7, "stagec": 45, "stagec2": 4}
+STAGEC_MAX_FILE_MB, STAGEC_MAX_TOTAL_MB = 10, 200   # approved 25 Nov 2026
 # revenue7 (approved 25 Nov 2026): XBRL companyfacts of the 6 exposed firms and Intel
 REVENUE7 = {"NeoPhotonics": "0001227025", "Inphi": "0001160958", "Lumentum": "0001633978", "Qorvo": "0001604778",
             "Micron": "0000723125", "Finisar": "0001094739", "Intel": "0000050863"}
@@ -80,6 +81,49 @@ def get(purpose, url, out_file):
             raise SystemExit(f"STOP: repeated errors ({errors}). Ask Penelope first.")
 
 
+def get_capped(purpose, url, out_file, total_mb):
+    """Like get(), but reads the file in pieces: a file over STAGEC_MAX_FILE_MB, or a run total over
+    STAGEC_MAX_TOTAL_MB, is not saved and the run stops. Returns the new run total."""
+    if out_file.exists():
+        print(f"  kept (already here): {out_file.name}")
+        return total_mb + out_file.stat().st_size / 1e6
+    n = used(purpose)
+    if n >= LIMITS[purpose]:
+        raise SystemExit(f"STOP: {n} '{purpose}' requests logged, limit {LIMITS[purpose]}. Ask Penelope first.")
+    time.sleep(PAUSE_SECONDS)
+    body, status, result = b"", None, "saved"
+    with requests.get(url, headers={"User-Agent": user_agent()}, timeout=120, stream=True) as r:
+        status = r.status_code
+        if status == 200:
+            for chunk in r.iter_content(1 << 20):
+                body += chunk
+                if len(body) / 1e6 > STAGEC_MAX_FILE_MB:
+                    result = f"not saved: over {STAGEC_MAX_FILE_MB} MB"
+                    break
+    mb = len(body) / 1e6
+    if status == 200 and result == "saved" and total_mb + mb > STAGEC_MAX_TOTAL_MB:
+        result = f"not saved: run total would pass {STAGEC_MAX_TOTAL_MB} MB"
+    new = not LOG.exists()
+    with LOG.open("a", newline="") as f:
+        w = csv.writer(f)
+        if new:
+            w.writerow(["purpose", "n", "time", "status", "mb", "url"])
+        w.writerow([purpose, n + 1, datetime.now().isoformat(timespec="seconds"), status, f"{mb:.2f}", url + ("" if result == "saved" else f" ({result})")])
+    if status != 200:
+        errors["in_a_row"] += 1; errors["total"] += 1
+        print(f"  {purpose} {n + 1}/{LIMITS[purpose]}: HTTP {status}  {out_file.name}")
+        if errors["in_a_row"] >= 2 or errors["total"] >= 3:
+            raise SystemExit(f"STOP: repeated errors ({errors}). Ask Penelope first.")
+        return total_mb
+    errors["in_a_row"] = 0
+    if result != "saved":
+        raise SystemExit(f"STOP: {out_file.name}: {result}. Ask Penelope first.")
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    out_file.write_bytes(body)
+    print(f"  {purpose} {n + 1}/{LIMITS[purpose]}: {mb:5.2f} MB  total {total_mb + mb:6.1f} MB  {out_file.name}")
+    return total_mb + mb
+
+
 def submissions(purpose, cik):
     cik = str(cik).zfill(10)
     get(purpose, f"https://data.sec.gov/submissions/CIK{cik}.json", OUT / "submissions" / f"CIK{cik}.json")
@@ -110,6 +154,26 @@ def main():
         for firm, cik in REVENUE7.items():
             get("revenue7", f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
                 OUT / "companyfacts" / f"CIK{cik}.json")
+    elif job == "stagec":
+        import re
+        plan = (PROJECT / "notes" / "stage-c-plan.md").read_text()
+        ciks = re.findall(r"\| CIK(\d{10})\.json \|", plan)
+        print(f"stagec: {len(ciks)} files in notes/stage-c-plan.md")
+        total = 0.0
+        for cik in ciks:
+            total = get_capped("stagec", f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
+                               OUT / "companyfacts" / f"CIK{cik}.json", total)
+        print(f"done: run total {total:.1f} MB")
+    elif job == "stagec2":   # Broadcom's predecessors (approved 25 Nov 2026): 10 MB per file, 20 MB in total
+        global STAGEC_MAX_TOTAL_MB
+        STAGEC_MAX_TOTAL_MB = 20
+        total = 0.0
+        for cik in ["0001649338", "0001441634"]:          # Broadcom Ltd (now Broadcom Pte. Ltd.), Avago Technologies
+            total = get_capped("stagec2", f"https://data.sec.gov/submissions/CIK{cik}.json",
+                               OUT / "submissions" / f"CIK{cik}.json", total)
+            total = get_capped("stagec2", f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
+                               OUT / "companyfacts" / f"CIK{cik}.json", total)
+        print(f"done: run total {total:.1f} MB")
     elif job == "older":
         for name in sys.argv[2:]:
             get("lists80", f"https://data.sec.gov/submissions/{name}", OUT / "submissions" / name)

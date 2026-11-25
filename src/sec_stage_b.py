@@ -72,10 +72,15 @@ def path_for(url):
 def main():
     global LOG, MAX_TOTAL_MB
     args = sys.argv[1:]
-    if "--max-total" in args:
-        i = args.index("--max-total")
-        MAX_TOTAL_MB = float(args[i + 1])
-        args = args[:i] + args[i + 2:]
+    global MAX_FILE_MB
+    for flag in ("--max-total", "--max-file"):
+        if flag in args:
+            i = args.index(flag)
+            if flag == "--max-total":
+                MAX_TOTAL_MB = float(args[i + 1])
+            else:
+                MAX_FILE_MB = float(args[i + 1])
+            args = args[:i] + args[i + 2:]
     stages = args
     if stages != ["B1"]:
         LOG = OUT / f"request_log_{'_'.join(stages)}.csv"
@@ -101,7 +106,7 @@ def main():
                 log([n + 1, stamp, r.status_code, "", "error", url])
                 raise SystemExit(f"STOP: HTTP {r.status_code} for {parts[-1]}")
             if size > MAX_FILE_MB:
-                log([n + 1, stamp, 200, f"{size:.1f}", "not saved: file over 20 MB", url])
+                log([n + 1, stamp, 200, f"{size:.1f}", f"not saved: file over {MAX_FILE_MB:g} MB", url])
                 raise SystemExit(f"STOP: {parts[-1]} is {size:.1f} MB (> {MAX_FILE_MB} MB). Not saved.")
             if total + size > MAX_TOTAL_MB:
                 log([n + 1, stamp, 200, f"{size:.1f}", f"not saved: total over {MAX_TOTAL_MB:g} MB", url])
@@ -111,7 +116,7 @@ def main():
             for chunk in r.iter_content(CHUNK):      # also guards a missing Content-Length
                 body += chunk
                 if len(body) / 1e6 > MAX_FILE_MB:
-                    log([n + 1, stamp, 200, f">{MAX_FILE_MB}", "not saved: file over 20 MB", url])
+                    log([n + 1, stamp, 200, f">{MAX_FILE_MB}", f"not saved: file over {MAX_FILE_MB:g} MB", url])
                     raise SystemExit(f"STOP: {parts[-1]} passed {MAX_FILE_MB} MB while reading. Not saved.")
         out_file.parent.mkdir(parents=True, exist_ok=True)
         out_file.write_bytes(body)

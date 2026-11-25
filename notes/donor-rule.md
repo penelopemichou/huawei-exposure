@@ -31,6 +31,8 @@ Every sentence that mentions Huawei or HiSilicon (Huawei's chip unit) gets one l
 
 A sentence labelled *unclear* keeps the firm **out of the donor group until Penelope decides**. It is listed with the sentence.
 
+**Standing rule (decided 25 Nov 2026): unclear = out of donors.** A firm with any *unclear* sentence (in its FY2018/FY2019 10-K, or in a later 10-K under the later-filing rule) is not a donor, and it is not counted as exposed. Applied so far: **Mellanox** (B2a:89, "we work with leading vendors … including … Huawei") and **Kulicke & Soffa** (B2b:68–69, "these products cannot be sold to Huawei"). Both are listed in `results/dropped_donors.csv`.
+
 ### Exposure group and dose (decided 25 Nov 2026, before any forecast)
 
 - **Group:** a firm is **exposed** if its FY2018 or FY2019 10-K names Huawei at **10 % or more** of total revenue.
@@ -44,7 +46,7 @@ The firm's FY2018/FY2019 10-K names Huawei as a customer (or licensee) but gives
 - They are shown in **their own rows** and in the **guidance-cut table**. (That table is not defined in this repo yet; Penelope's term, to be specified.)
 - Firms (from B1): MACOM, Skyworks, Broadcom, Qualcomm.
   - **Qualcomm: royalty income, not product sales.** Huawei pays licence royalties ($600 million in FY2018, $450 million in FY2019), so its "exposure" is of a different kind.
-  - **Skyworks:** Penelope's note "about 12 % of H1 FY2019" may come from a 10-Q; it is not in either 10-K. The 10-Q is proposed as Stage B3.
+  - **Skyworks:** Penelope's note "about 12 % of H1 FY2019" is in neither 10-K nor the March 2019 10-Q (Stage B3): **unsourced, not used**.
 
 ## Donor filter (all five must hold; drafted 25 Nov 2026, not applied yet)
 
@@ -57,6 +59,16 @@ The firm's FY2018/FY2019 10-K names Huawei as a customer (or licensee) but gives
    - A firm **with a hit** passes only after its documents are read and labelled. It never passes by default.
 
 **Every firm that passes is included.** No firm is added or removed by hand.
+
+**Class rule for donors (decided 25 Nov 2026; design-v2 (f)):**
+
+- **PRIMARY donors:** firms whose main product is a **chip** or an **optical/photonic component** sold to other electronics makers.
+- **Sensitivity group** (still forecast, not in the primary test):
+  - contract manufacturers, solar makers, and equipment and materials makers;
+  - firms whose main product is a **finished system or instrument**, not a chip or an optical/photonic component sold to other electronics makers;
+  - firms whose class is **unclear**;
+  - firms in the "other" class: connectors, magnetics, sensors and power modules.
+- Applied: IPG Photonics, OSI Systems and Viavi go to sensitivity (system/instrument or unclear; no 10-K downloaded for this). Amphenol, Bel Fuse, CTS, Methode and Vicor ("other") go to sensitivity.
 
 **Later filings can only move a firm OUT of the donor group, never in.** A later 10-K (filed up to 31 Dec 2020, the end of the full-text search; for example Xilinx FY2020) with a sentence labelled customer with %, customer without %, indirect or unclear moves the firm out, using the same label test. A firm moved out this way is not counted as exposed. Nothing filed later can make a firm a donor or change an exposed firm's group.
 

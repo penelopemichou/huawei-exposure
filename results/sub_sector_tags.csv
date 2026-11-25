@@ -1,0 +1,55 @@
+firm,group,comparison,sic,sub_sector,what_it_makes,source
+NeoPhotonics,exposed,PRIMARY,3674,optical/datacom,optical components for telecom and data-centre links,10-K read
+Inphi,exposed,PRIMARY,3674,optical/datacom,high-speed analog chips for optical and data-centre interconnects,10-K read
+Qorvo,exposed,PRIMARY,3674,handset RF,RF front-end chips for phones; also infrastructure/defence,10-K read
+Micron,exposed,PRIMARY,3674,memory,DRAM and NAND memory,10-K read
+Finisar,exposed,PRIMARY (h = 1 only),3674,optical/datacom,optical transceivers for datacom and telecom,10-K read
+Lumentum,exposed,SECONDARY,3669,optical/datacom,optical components (telecom/datacom) and lasers; 3D sensing,10-K read
+MACOM,"low exposure, implied",own rows,3674,optical/datacom,"analog RF, microwave and optical chips for telecom and data centres",10-K read
+Skyworks,"low exposure, implied",own rows,3674,handset RF,RF front-end chips for phones and IoT,10-K read
+Broadcom,"low exposure, implied",own rows,3674,analog/other,"mixed: networking, broadband, storage and wireless RF (FBAR)",10-K read
+Qualcomm,"low exposure, implied",own rows,3663,handset RF,phone modems/processors and patent licensing (royalties),10-K read
+Intel,donor,PRIMARY,3674,analog/other,"processors (PC, data centre); some memory",10-K read
+Enphase,donor,PRIMARY,3674,analog/other,solar microinverters,10-K read
+Ambarella,donor,PRIMARY,3674,analog/other,video-processing chips for cameras,10-K read
+Microchip,donor,PRIMARY,3674,analog/other,microcontrollers and analog chips,10-K read
+Mellanox,unclear (out until decided),-,3674,optical/datacom,data-centre interconnect (InfiniBand/Ethernet),10-K read
+Kulicke & Soffa,unclear (out until decided),-,3674,analog/other,chip assembly and packaging equipment,10-K read
+Advanced Energy,donor,PRIMARY,3679,analog/other,power conversion for chip-making equipment,from memory (10-K business description not read)
+AMD,donor,PRIMARY,3674,analog/other,processors and graphics chips,from memory (10-K business description not read)
+Amkor,donor,PRIMARY,3674,analog/other,chip packaging and test services,from memory (10-K business description not read)
+Amphenol,donor,PRIMARY,3678,analog/other,connectors and cables,from memory (10-K business description not read)
+Analog Devices,donor,PRIMARY,3674,analog/other,analog and mixed-signal chips,from memory (10-K business description not read)
+AXT,donor,PRIMARY,3674,analog/other,compound-semiconductor substrates (used in optical and RF),from memory (10-K business description not read)
+Bel Fuse,donor,PRIMARY,3677,analog/other,"magnetics, connectors, power supplies",from memory (10-K business description not read)
+Benchmark Electronics,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+CMC Materials,donor,PRIMARY,3674,analog/other,chip-polishing slurries and pads,from memory (10-K business description not read)
+CTS,donor,PRIMARY,3672,analog/other,"sensors, actuators, electronic components",from memory (10-K business description not read)
+Diodes,donor,PRIMARY,3674,analog/other,discrete and analog chips,from memory (10-K business description not read)
+First Solar,donor,PRIMARY,3674,analog/other,solar panels,from memory (10-K business description not read)
+FormFactor,donor,PRIMARY,3674,analog/other,probe cards for chip testing,from memory (10-K business description not read)
+IEC Electronics,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+IPG Photonics,donor,PRIMARY,3674,analog/other,industrial fibre lasers,from memory (10-K business description not read)
+Jabil,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+Key Tronic,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+Kimball Electronics,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+Lattice,donor,PRIMARY,3674,analog/other,low-power FPGAs,from memory (10-K business description not read)
+MagnaChip,donor,PRIMARY,3674,analog/other,display-driver and power chips,from memory (10-K business description not read)
+Maxim,donor,PRIMARY,3674,analog/other,analog and mixed-signal chips,from memory (10-K business description not read)
+Methode,donor,PRIMARY,3678,analog/other,"connectors, sensors, automotive electronics",from memory (10-K business description not read)
+Monolithic Power,donor,PRIMARY,3674,analog/other,power-management chips,from memory (10-K business description not read)
+Nortech,donor,PRIMARY,3679,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+NVIDIA,donor,PRIMARY,3674,analog/other,graphics and data-centre processors,from memory (10-K business description not read)
+OSI Systems,donor,PRIMARY,3674,analog/other,"security scanners, optoelectronics",from memory (10-K business description not read)
+Photronics,donor,PRIMARY,3674,analog/other,photomasks,from memory (10-K business description not read)
+Plexus,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+Power Integrations,donor,PRIMARY,3674,analog/other,power-conversion chips,from memory (10-K business description not read)
+Rambus,donor,PRIMARY,3674,memory,memory-interface chips and patent licensing,from memory (10-K business description not read)
+Sanmina,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+Silicon Labs,donor,PRIMARY,3674,analog/other,mixed-signal IoT chips,from memory (10-K business description not read)
+SMTC,donor,PRIMARY,3672,analog/other,contract electronics manufacturing,from memory (10-K business description not read)
+SunPower,donor,PRIMARY,3674,analog/other,solar panels and systems,from memory (10-K business description not read)
+Texas Instruments,donor,PRIMARY,3674,analog/other,analog and embedded chips,from memory (10-K business description not read)
+Ultra Clean,donor,PRIMARY,3674,analog/other,gas and fluid systems for chip-making equipment,from memory (10-K business description not read)
+Viavi,donor,PRIMARY,3674,optical/datacom,network test equipment and optical coatings,from memory (10-K business description not read)
+Vicor,donor,PRIMARY,3679,analog/other,power modules,from memory (10-K business description not read)

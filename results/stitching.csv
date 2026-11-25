@@ -1,0 +1,4 @@
+company,order,cik,entity,quarters_in_file,first_quarter_end,last_quarter_end,role,overlap_with_next,overlap_identical,approved
+Broadcom,1,0001441634,Avago Technologies LTD,24,2010-01-31,2015-11-01,accounting acquirer of Broadcom Corp (2016),4 quarters (2015-02-01 to 2015-11-01),4 of 4,Penelope 2026-11-25
+Broadcom,2,0001649338,Broadcom Ltd (now Broadcom Pte. Ltd.),13,2015-02-01,2018-02-04,holding company 2016-2018; re-registered as Broadcom Inc.,5 quarters (2017-01-29 to 2018-02-04),5 of 5,Penelope 2026-11-25
+Broadcom,3,0001730168,Broadcom Inc.,39,2017-01-29,2026-08-02,current entity (newest file wins on overlaps),,,Penelope 2026-11-25

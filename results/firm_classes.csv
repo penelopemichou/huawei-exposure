@@ -1,0 +1,53 @@
+group,firm,cik,sic,sic_description,proposed_class,evidence,note,comparison
+exposed,NEOPHOTONICS CORP,0001227025,3674,Semiconductors & Related Devices,optical-component,10-K read,optical components for telecom/datacom,
+exposed,INPHI Corp,0001160958,3674,Semiconductors & Related Devices,chip,10-K read,high-speed analog chips for optical links,
+exposed,Lumentum Holdings Inc.,0001633978,3669,"Communications Equipment, NEC",optical-component,10-K read,optical components and lasers (SECONDARY),
+exposed,"Qorvo, Inc.",0001604778,3674,Semiconductors & Related Devices,chip,10-K read,RF chips,
+exposed,MICRON TECHNOLOGY INC,0000723125,3674,Semiconductors & Related Devices,chip,10-K read,memory chips,
+exposed,FINISAR CORP,0001094739,3674,Semiconductors & Related Devices,optical-component,10-K read,optical transceivers,
+"low exposure, implied","MACOM Technology Solutions Holdings, Inc.",0001493594,3674,Semiconductors & Related Devices,chip,10-K read,analog RF/microwave/optical chips,
+"low exposure, implied","SKYWORKS SOLUTIONS, INC.",0000004127,3674,Semiconductors & Related Devices,chip,10-K read,RF chips,
+"low exposure, implied",Broadcom Inc.,0001730168,3674,Semiconductors & Related Devices,chip,10-K read,"networking, broadband, wireless chips",
+"low exposure, implied",QUALCOMM INC/DE,0000804328,3663,Radio & Tv Broadcasting & Communications Equipment,chip,10-K read,phone chips and licensing,
+donor,INTEL CORP,0000050863,3674,Semiconductors & Related Devices,chip,10-K read,processors,PRIMARY
+donor,"Enphase Energy, Inc.",0001463101,3674,Semiconductors & Related Devices,solar,10-K read,solar microinverters (10-K: inverter competitors),sensitivity
+donor,AMBARELLA INC,0001280263,3674,Semiconductors & Related Devices,chip,10-K read,video-processing chips,PRIMARY
+donor,MICROCHIP TECHNOLOGY INC,0000827054,3674,Semiconductors & Related Devices,chip,10-K read,"microcontrollers, analog",PRIMARY
+donor,ADVANCED ENERGY INDUSTRIES INC,0000927003,3679,"Electronic Components, NEC",equipment,from memory,power subsystems for chip-making equipment,sensitivity
+donor,ADVANCED MICRO DEVICES INC,0000002488,3674,Semiconductors & Related Devices,chip,name,processors,PRIMARY
+donor,"AMKOR TECHNOLOGY, INC.",0001047127,3674,Semiconductors & Related Devices,contract manufacturer,10-K read,10-K FY2018: 'outsourced semiconductor packaging and test services',sensitivity
+donor,AMPHENOL CORP /DE/,0000820313,3678,Electronic Connectors,other,from memory,connectors and cables,sensitivity
+donor,ANALOG DEVICES INC,0000006281,3674,Semiconductors & Related Devices,chip,name,analog chips,PRIMARY
+donor,AXT INC,0001051627,3674,Semiconductors & Related Devices,equipment,10-K read,10-K FY2018: 'materials science company ... substrates ... We do not design or manufacture the chips',sensitivity
+donor,BEL FUSE INC /NJ,0000729580,3677,"Electronic Coils, Transformers & Other Inductors",other,from memory,"magnetics, connectors, power supplies",sensitivity
+donor,BENCHMARK ELECTRONICS INC,0000863436,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,"CMC Materials, Inc.",0001102934,3674,Semiconductors & Related Devices,equipment,name,chip-polishing materials,sensitivity
+donor,CTS CORP,0000026058,3672,Printed Circuit Boards,other,from memory,"sensors, actuators, components",sensitivity
+donor,DIODES INC /DEL/,0000029002,3674,Semiconductors & Related Devices,chip,name,discrete and analog chips,PRIMARY
+donor,"FIRST SOLAR, INC.",0001274494,3674,Semiconductors & Related Devices,solar,name,solar panels,sensitivity
+donor,FORMFACTOR INC,0001039399,3674,Semiconductors & Related Devices,equipment,from memory,probe cards for chip testing,sensitivity
+donor,IEC ELECTRONICS CORP,0000049728,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,IPG PHOTONICS CORP,0001111928,3674,Semiconductors & Related Devices,sensitivity from rules,10-K read,"10-K FY2018: lasers used primarily in materials processing, sold to OEMs, system integrators and end users",sensitivity
+donor,JABIL INC,0000898293,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,KEY TRONIC CORP,0000719733,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,"Kimball Electronics, Inc.",0001606757,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,LATTICE SEMICONDUCTOR CORP,0000855658,3674,Semiconductors & Related Devices,chip,name,FPGAs,PRIMARY
+donor,MAGNACHIP SEMICONDUCTOR Corp,0001325702,3674,Semiconductors & Related Devices,chip,name,display-driver and power chips,PRIMARY
+donor,MAXIM INTEGRATED PRODUCTS INC,0000743316,3674,Semiconductors & Related Devices,chip,from memory,analog chips,PRIMARY
+donor,METHODE ELECTRONICS INC,0000065270,3678,Electronic Connectors,other,from memory,"connectors, sensors, automotive electronics",sensitivity
+donor,"MONOLITHIC POWER SYSTEMS, INC.",0001280452,3674,Semiconductors & Related Devices,chip,10-K read,10-K FY2018: 'a leading semiconductor company ... high-performance power solutions',PRIMARY
+donor,NORTECH SYSTEMS INC,0000722313,3679,"Electronic Components, NEC",contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,NVIDIA CORP,0001045810,3674,Semiconductors & Related Devices,chip,from memory,graphics and data-centre processors,PRIMARY
+donor,OSI SYSTEMS INC,0001039065,3674,Semiconductors & Related Devices,sensitivity from rules,from memory,"security scanners, healthcare, optoelectronics (system/instrument or unclear; no 10-K read)",sensitivity
+donor,PHOTRONICS INC,0000810136,3674,Semiconductors & Related Devices,equipment,from memory,photomasks,sensitivity
+donor,PLEXUS CORP,0000785786,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,POWER INTEGRATIONS INC,0000833640,3674,Semiconductors & Related Devices,chip,10-K read,10-K FY2018: 'analog and mixed-signal integrated circuits (ICs)',PRIMARY
+donor,RAMBUS INC,0000917273,3674,Semiconductors & Related Devices,other,10-K read,10-K FY2018: primary revenue is patent licenses; royalties 56% of 2018 revenue,sensitivity
+donor,SANMINA CORP,0000897723,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,SILICON LABORATORIES INC.,0001038074,3674,Semiconductors & Related Devices,chip,name,mixed-signal chips,PRIMARY
+donor,SMTC CORP,0001108320,3672,Printed Circuit Boards,contract manufacturer,from memory,contract electronics manufacturing,sensitivity
+donor,SUNPOWER CORP,0000867773,3674,Semiconductors & Related Devices,solar,name,solar panels and systems,sensitivity
+donor,TEXAS INSTRUMENTS INC,0000097476,3674,Semiconductors & Related Devices,chip,from memory,analog and embedded chips,PRIMARY
+donor,"Ultra Clean Holdings, Inc.",0001275014,3674,Semiconductors & Related Devices,equipment,from memory,gas/fluid subsystems for chip-making equipment,sensitivity
+donor,VIAVI SOLUTIONS INC.,0000912093,3674,Semiconductors & Related Devices,sensitivity from rules,10-K read,"10-K FY2018: 'global provider of network test, monitoring and assurance solutions'; optical coatings second",sensitivity
+donor,VICOR CORP,0000751978,3679,"Electronic Components, NEC",other,10-K read,10-K FY2018: 'modular power components and power systems',sensitivity

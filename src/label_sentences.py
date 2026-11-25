@@ -71,13 +71,22 @@ STAGE_OVERRIDES = {
             106: P, 107: P, 121: P, 122: P,          # Semtech: table "Representative Customers by End-Markets"
             126: P,                                  # Semtech: "other customers, such as Huawei"
             133: P, 143: P,                          # Synaptics: table "Our leading OEM customers ... included"
-            154: P, 156: P, 158: P},                 # TTM: five largest OEM customers include Huawei
+            154: P, 156: P, 158: P,                  # TTM: five largest OEM customers include Huawei
+            89: U},                                  # Mellanox: "we work with leading vendors ... including ... Huawei"
     # B2c (exposure only), read 25 Nov 2026
     "B2c": {1: O, 12: O,                             # CEVA: competes with Huawei's internal engineering teams
             43: P,                                   # NXP: 10 largest OEM end customers include Huawei
             100: O,                                  # SiTime: Temporary General License description
             101: "indirect",                         # SiTime: revenue attributable to Huawei via distributors
             131: P},                                 # Xperi: imaging technology licensed to Huawei
+    # B2b (later 10-Ks, FY2020), read 25 Nov 2026; later filings can only move a firm out
+    "B2b": {0: P, 6: P, 10: P, 11: P, 36: P,          # Alpha & Omega: investigation of its business transactions with Huawei
+            2: P, 8: P,                              # Alpha & Omega: has not shipped any product to Huawei since Dec 2019
+            17: "indirect", 18: "indirect",          # Alpha & Omega: ships indirectly to Huawei through distributors
+            20: "indirect", 21: "indirect",          # Alpha & Omega: indirect shipments ~2% of FY2019 revenue / $11-13M
+            46: "indirect",                          # Applied Materials: its customers' exports to Huawei limit demand
+            67: O,                                   # Kulicke & Soffa: general description of the EAR amendment
+            68: U, 69: U},                           # Kulicke & Soffa: products "cannot be sold to Huawei" (customer?)
 }
 
 

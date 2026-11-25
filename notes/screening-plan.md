@@ -23,7 +23,7 @@ Group and dose rules: `donor-rule.md` ("Exposure group and dose"). Dose = Huawei
 | Finisar | FY2019 (Apr 2019) | not given (below 10 %) / 10 % | 10-K FY2019, Item 8 (row 60) | exposed | **10 %** | yes (25 Nov 2026) |
 | Micron | FY2018 (Aug 2018) | not given / 12 % (FY2019) | 10-K FY2019, Item 8 (row 214) | exposed | **12 %, fallback, flagged** | yes (25 Nov 2026) |
 | MACOM | FY2018 (Sep 2018) | named, no % | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
-| Skyworks | FY2018 (Sep 2018) | named, no % ("about 12 % of H1 FY2019": not in the 10-K; maybe a 10-Q, Stage B3) | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
+| Skyworks | FY2018 (Sep 2018) | named, no % ("about 12 % of H1 FY2019": **unsourced, not used**; not in either 10-K or the March 2019 10-Q) | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
 | Broadcom | FY2018 (Nov 2018) | not named as customer / named, no % | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
 | Qualcomm | FY2018 (Sep 2018) | licensee, $600 million / $450 million royalties (royalty income, not product sales) | n/a | low exposure, implied | n/a | yes (25 Nov 2026) |
 
@@ -36,7 +36,7 @@ The pre-filled tables below are kept as they were written. Where they differ fro
 | Qorvo | Saturday nearest 31 Mar (from memory) | FY2019: about 15 % | | Q4 FY2019, ended about 30 Mar 2019 (from memory) | Penelope's notes | to verify |
 | NeoPhotonics | 31 Dec (from memory) | 2018: 46 %; 2019: 41 % | | Q1 2019, ended 31 Mar 2019 (from memory) | Penelope's notes | to verify |
 | Lumentum | Saturday nearest 30 Jun (from memory) | FY2018: 11 % | | Q3 FY2019, ended about 30 Mar 2019 (from memory) | Penelope's notes | to verify |
-| Skyworks | Friday nearest 30 Sep (from memory) | H1 FY2019: about 12 % (a half year, so probably a 10-Q or a news figure; check the FY2019 10-K for the full year) | | Q2 FY2019, ended about 29 Mar 2019 (from memory) | Penelope's notes | to verify |
+| Skyworks | Friday nearest 30 Sep (from memory) | H1 FY2019: about 12 % (**unsourced, not used**: not in either 10-K or the March 2019 10-Q) | | Q2 FY2019, ended about 29 Mar 2019 (from memory) | Penelope's notes | to verify |
 | Inphi | 31 Dec (from memory) | 2018: 14 % | | Q1 2019, ended 31 Mar 2019 (from memory) | news only | to verify |
 
 ## Table 2: candidates to screen (names from memory)

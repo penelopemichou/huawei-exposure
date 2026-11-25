@@ -150,11 +150,84 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
   - Donors so far 41 (+ up to 7 after B2b).
   - **Oclaro** is exposed (11 % FY2018) but has no data after the event.
   - No new exposed firm in B2c.
-  - Skyworks' "about 12 % of H1 FY2019" is not in the March 2019 10-Q.
+  - Skyworks' "about 12 % of H1 FY2019" is not in the March 2019 10-Q: **unsourced, not used**.
   - New data check: the h = 1 target must be reported after 16 May 2019.
 - **Quarter counts** (`results/quarter_counts.csv`, no values printed): all 7 firms pass the 20-quarter rule by Project 2's count. Qorvo qualifies for stitching but needs none.
   - **Lumentum's 23 include 9 pre-spin-off carve-out quarters**, which rule (c) may exclude. Penelope decides.
 - **B2b (11 documents) waits** for Penelope's reading of the B2a results.
+
+## Session 2 log, continued (25 Nov 2026, fourth part), not committed after `1a3bff2`
+
+- **Private-word scan changed** (the scan lives outside the repo):
+  - Two of the words must now match as whole words. The others and the email still match anywhere.
+  - The self-test plants a two-word name, the bare word, and a longer company name that contains it; only the first two are caught.
+  - Clean, so all changes were committed in `1a3bff2`.
+- **Lumentum → SECONDARY**, with both reasons in `design-v2.md` (d). Primary exposed: 5 at h = 1, 4 at h = 2–4.
+- Three-group descriptive check added (`design-v2.md` (e)).
+- Skyworks "about 12 % of H1 FY2019" is marked **unsourced, not used** everywhere.
+- README limits: acquired firms drop out of the sample.
+- **B2b:** 11 documents, 42.8 MB (limit 60).
+  - Alpha & Omega (indirect), Applied Materials (indirect), Cirrus Logic and Marvell are **moved out** by later filings.
+  - Ambarella and Microchip **stay donors**.
+  - Kulicke & Soffa is **unclear**.
+  - Mellanox re-read in context ("we work with leading vendors … including … Huawei"): **unclear**.
+  - **Donors: 42**, plus 2 unclear.
+- Every row a donor decision depends on: `notes/decision-rows.md` (15 donor rows, 81 hand-relabelled rows, plus the Mellanox change).
+- **Sub-sector tags** in `results/sub_sector_tags.csv`. The donors' tags are from memory (their 10-Ks were not read).
+  - Exposed: 4 optical/datacom, 1 handset RF, 1 memory.
+  - Donors: 40 analog/other, 1 memory, 1 optical/datacom.
+- **Prepared, not run:** `notes/frozen-lists.md` (DRAFT), `notes/permutation-setup.md` (DRAFT; exact enumeration, C(47, 5) = 1,533,939), `notes/predictions-before-run.md` (template).
+
+## Session 2 log, continued (25 Nov 2026, fifth part), not committed
+
+- **Standing rule: unclear = out of donors** (`donor-rule.md`). Mellanox and Kulicke & Soffa are out.
+- **Permutation setup** (`permutation-setup.md`, DRAFT):
+  - one-sided primary, two-sided shown;
+  - rank-sum of the exposed firms, exact enumeration;
+  - per-firm outcome = average of the B4 and AutoETS h = 1 signed miss, each rule also separately;
+  - "consistent" only if both rules point the same way.
+- **design-v2 (f):** primary donors = chip and optical-component makers; contract manufacturers, solar and equipment makers go to a sensitivity group.
+- **design-v2 (g):** secondary outcome = signed miss ÷ the firm's own median absolute pre-event miss, with the number of pre-event forecasts.
+- **README:** the optical/datacom vs other mismatch cannot be separated from Huawei exposure.
+- **Class table** (`src/classify_firms.py`, `results/firm_classes.csv`, DRAFT; from files on disk only):
+  - SIC descriptions cannot split 3674 firms, so 29 of 52 rows rest on memory (marked).
+  - Donors: 15 chip (PRIMARY), 19 sensitivity, 5 "other" (to decide), 3 unclear (IPG Photonics, OSI Systems, Viavi; their latest pre-event 10-Ks are proposed as Stage D, not downloaded).
+- Frozen lists still **DRAFT**.
+
+## Session 2 log, continued (25 Nov 2026, sixth part), not committed
+
+- **Class rule added to `donor-rule.md`:** a finished system or instrument, or an unclear class, goes to sensitivity, and so do the "other" firms. Stage D is **not** downloaded.
+- **Donors: 15 PRIMARY (all chip makers; no optical-component donor) and 27 sensitivity** (`results/firm_classes.csv`).
+- Waiting for Penelope's confirmation of the table. The revenue-file list comes after that.
+
+## Session 2 log, continued (25 Nov 2026, seventh part), not committed
+
+- **Stage E** (Penelope's "yes"): 8 10-K documents, 22.5 MB (limits 10 MB per file, 60 MB in total; largest 4.5 MB). Read only the opening of Item 1 to set the class.
+- **Confirmed:**
+  - chip: Power Integrations, Monolithic Power;
+  - equipment and materials: AXT;
+  - contract manufacturer: Amkor;
+  - other: Vicor;
+  - sensitivity by the rule: IPG Photonics (lasers mainly for industrial machines), Viavi (test instruments).
+- **Changed: Rambus moves from PRIMARY to sensitivity** (other: patent royalties 56 % of 2018 revenue).
+- **Donors: 14 PRIMARY (all chip makers), 28 sensitivity.** 21 of 52 class rows still rest on memory.
+
+## Session 2 log, continued (25 Nov 2026, eighth part), not committed
+
+- **Class table confirmed by Penelope.**
+- **Stage C (Penelope's "yes"):** 45 revenue files, 153.5 MB (limits 10 MB per file, 200 MB in total; largest 4.8 MB), 0 errors. New size-capped job `stagec` in `src/sec_filing_lists.py`.
+- **Quarter counts for all 52 firms** (`src/count_quarters.py all`, `results/quarter_counts_all.csv`; counts and dates only, no values):
+  - all 14 primary and 28 sensitivity donors pass the 20-quarter rule and have h = 1–4;
+  - all 6 exposed firms pass (Lumentum is SECONDARY by decision; Finisar has h = 1 only);
+  - low exposure: MACOM, Skyworks and Qualcomm pass; **Broadcom fails (10 quarters)**.
+- **Criterion 3 confirmed** for the 13 "pass?" donors: earliest revenue value filed 2009–2012.
+- **Open: Broadcom.** From memory it is the same business as Broadcom Ltd (re-registered in 2018) and, before that, Avago (the accounting acquirer of Broadcom Corp in 2016), so it would qualify for stitching under design-v2 (c). Not checked; Penelope decides.
+
+## Session 2 log, continued (25 Nov 2026, ninth part), not committed
+
+- **Stage C2** (Penelope's "yes"): filing lists and revenue files for Broadcom Ltd (0001649338) and Avago (0001441634), 4 files, 2.1 MB.
+- **Result:** the same fiscal calendar and 9 of 9 overlapping quarters identical, so the stitch qualifies under design-v2 (c). Stitched: 38 quarters, no gaps; unstitched: 10.
+- **Stitching approved by Penelope (25 Nov 2026):** Avago → Broadcom Ltd → Broadcom Inc. (`results/stitching.csv`; newest file wins where they overlap). Broadcom now has 38 quarters and passes the 20-quarter rule. The level jumps (Feb 2016, and from memory Nov 2018) are flagged next to its results. **All 52 firms now pass the pre-flight checks** (Finisar h = 1 only; Lumentum SECONDARY by decision).
 
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 

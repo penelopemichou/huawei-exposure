@@ -15,5 +15,8 @@ Did US chip and electronic-component suppliers with more disclosed Huawei exposu
 - **The later-filing check misses December year-end firms.** The Huawei full-text search covers 10-Ks filed up to 31 Dec 2020. Firms whose fiscal year ends in December filed their FY2020 10-K in 2021, so a Huawei mention there is not seen. For them, "later filings can move a firm out of the donor group" is not checked.
 - **The search looks for the word "Huawei" only.** A 10-K naming only "HiSilicon" (Huawei's chip unit) is not found by the search, though HiSilicon sentences are extracted from the documents that are read.
 - **The industry lists carry no dates**, and the 2018 revenue files (SEC frames) can miss active firms (Cree/Wolfspeed was missing). The donor pool may be incomplete.
-- **Few exposed firms**, and fewer at longer horizons (Finisar stops reporting after July 2019). One firm can move the result.
+- **Few exposed firms**, and fewer at longer horizons. One firm can move the result.
+- **Acquired firms disappear from the sample.** Oclaro (Huawei 11 % of FY2018 revenue) was bought by Lumentum in Dec 2018 and has no quarter after the event. Finisar was bought by II-VI and stops reporting after July 2019, so it has h = 1 only. Firms that survived may differ from those that did not.
+- **Unsourced figures are not used.** For example, a note of Skyworks at "about 12 % of H1 FY2019" was not found in its 10-Ks or its March 2019 10-Q: unsourced, not used.
 - **The yardstick lines come from non-chip companies**, so they are a rough guide only.
+- **Sub-sector cannot be separated from Huawei exposure.** Most exposed firms make optical and datacom parts; most donors do not. Even after limiting the primary donors to chip and optical-component makers, a gap between the groups may reflect the optical/datacom market rather than Huawei.
