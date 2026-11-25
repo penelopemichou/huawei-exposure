@@ -241,6 +241,26 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
   4. build the revenue tables;
   5. run the forecasts.
 
+## Session 2 log, continued (25 Nov 2026, eleventh part), not committed
+
+- Committed the freeze `adb3a8b`. Claude's predictions written; Penelope's section has only "I saw Claude's predictions before writing mine." (left for her, not read).
+- **Placement gap found:** chip/optical firms naming Huawei as a customer or indirect channel (B2a/B2b/B2c) had no group in the frozen file. **Amendment 1 proposed** (`notes/frozen-lists-amendment-1.md`, not approved, not applied): 12 to low exposure, 7 listed, not compared.
+- **Exact eligibility** (`src/eligibility_exact.py`, `results/eligibility_exact.csv`): Project 2's `prepare()`, `build_table()`, `first_origin()`, `cutoff_date()`, `known_at()` and `training_series()`, imported read-only (forecast-gap untouched).
+  - All 5 primary exposed, 4 low-exposure (Broadcom stitched) and 14 primary donors pass. Lumentum passes the count but stays SECONDARY by decision.
+  - **No firm moves to secondary.** Finisar has h = 1 only; Lattice and Silicon Labs have no h = 4 quarter.
+  - Tags are a provisional fixed order, to confirm per firm before forecasting.
+- **Rule broken, disclosed:** on the first run, Project 2's `prepare()` printed dropped full-year revenue values (Inphi 2014, Lattice 2022, MagnaChip 2018–19, Silicon Labs 2019–22), some after the origin. The script now captures that output and shows only counts. A note is added to Claude's predictions.
+
+## Session 2 log, continued (25 Nov 2026, twelfth part), not committed
+
+- **Amendment-1 candidates (Penelope's "yes"):** 12 revenue files, 40.1 MB (job `amend12`; SEC IDs from `results/amendment1_candidates.csv`).
+- **Exact eligibility:** all 12 pass with Project 2's functions (`results/eligibility_exact_amendment1.csv`). Cypress has no h = 4 quarter.
+- **Amendment 1 APPROVED by Penelope (25 Nov 2026, "Yes, all 12 join")**, before any forecast:
+  - low exposure is now 16 firms (the four FY2020-only firms flagged);
+  - 7 firms are listed, not compared;
+  - the primary test is unchanged.
+  - Recorded in `notes/frozen-lists-amendment-1.md`, a new section at the end of `notes/frozen-lists.md`, `donor-rule.md` and `design-v2.md` (e).
+
 ## Plan: guidance-cut table (added 25 Nov 2026; nothing downloaded)
 
 **One row per firm that revised its current-quarter revenue guidance after 16 May 2019.** Firms looked at: the exposed firms, the "low exposure, implied" firms and the donors.

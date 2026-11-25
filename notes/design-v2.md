@@ -46,6 +46,7 @@ Lumentum is still forecast and shown, labelled SECONDARY. **Primary exposed grou
 - **What "exposure matters" would look like:** the low-exposure firms' misses sit **between** the exposed firms' and the donors' (exposed most negative, then low exposure, then donors).
 - Descriptive only: no test, shown per horizon and per rule, with every firm's own miss visible.
 - It does not change the primary test in (b).
+- **After amendment 1 (25 Nov 2026), the low-exposure group has 16 firms**: the 4 from B1 plus 12 chip/optical makers from B2. Four of them name Huawei only in a FY2020 10-K and are shown flagged.
 
 ## (f) Primary donors = chip and optical-component makers only (decided by Penelope, 25 Nov 2026)
 

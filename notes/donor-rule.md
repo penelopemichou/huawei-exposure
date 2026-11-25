@@ -38,6 +38,10 @@ A sentence labelled *unclear* keeps the firm **out of the donor group until Pene
 - **Group:** a firm is **exposed** if its FY2018 or FY2019 10-K names Huawei at **10 % or more** of total revenue.
 - **Dose** (how exposed): Huawei's share in the firm's **latest fiscal year that ended before 16 May 2019**, as written in the 10-K. If that year's 10-K gives no percentage for Huawei, the other year's figure is used and marked **"fallback, flagged"**.
 
+### Low exposure, extended by amendment 1 (approved 25 Nov 2026)
+
+Chip or optical-component makers whose 10-K names Huawei as a customer, or as an indirect channel, with no 10 %+ share, and that pass the history and h = 1 checks, are **low exposure** (`notes/frozen-lists-amendment-1.md`). This includes four firms that name Huawei only in a 10-K filed after the event (FY2020: Marvell, Cirrus Logic, Alpha & Omega, Xilinx), flagged "FY2020 10-K only". Other classes with such a label are listed, not compared.
+
 ### Low exposure, implied (decided 25 Nov 2026)
 
 The firm's FY2018/FY2019 10-K names Huawei as a customer (or licensee) but gives no share, and says no other customer reached 10 %. So the share is below 10 % only by implication.

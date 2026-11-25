@@ -1,0 +1,13 @@
+group,comparison,firm,first_quarter,quarters_to_origin,origin,first_origin,20q_rule,origin_filed,cutoff,origin_known_at_cutoff,ets_unbroken_known,ets_ok,h1,h2,h3,h4
+proposed low exposure (amendment 1),own rows,ON Semiconductor,2009Q2 (2009-07-03),40,2019Q1 (2019-03-29),2014Q1,pass,2019-04-29,2019-06-02,yes,40,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,MaxLinear,2010Q2 (2010-06-30),36,2019Q1 (2019-03-31),2015Q1,pass,2019-05-01,2019-06-04,yes,36,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Semtech,2010Q2 (2009-07-26),40,2020Q1 (2019-04-28),2015Q1,pass,2019-05-29,2019-07-02,yes,40,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Synaptics,2010Q1 (2009-09-30),39,2019Q3 (2019-03-31),2014Q4,pass,2019-05-09,2019-06-04,yes,39,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Cypress,2010Q2 (2009-06-28),32,2019Q1 (2019-03-31),2015Q1,pass,2019-04-26,2019-06-04,yes,13,yes,yes,yes,yes,no
+proposed low exposure (amendment 1),own rows,DSP Group,2010Q2 (2010-06-30),36,2019Q1 (2019-03-31),2015Q1,pass,2019-05-10,2019-06-04,yes,36,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Applied Optoelectronics,2012Q1 (2012-03-31),29,2019Q1 (2019-03-31),2016Q4,pass,2019-05-09,2019-06-04,yes,29,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Cree/Wolfspeed,2010Q1 (2009-09-27),39,2019Q3 (2019-03-31),2014Q4,pass,2019-05-03,2019-06-04,yes,39,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Marvell,2009Q2 (2008-08-02),44,2020Q1 (2019-05-04),2014Q1,pass,2019-06-06,2019-07-08,yes,44,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Cirrus Logic,2011Q1 (2010-06-26),36,2019Q4 (2019-03-30),2015Q4,pass,2019-05-24,2019-06-03,yes,36,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Alpha & Omega,2011Q1 (2010-09-30),35,2019Q3 (2019-03-31),2015Q4,pass,2019-05-03,2019-06-04,yes,35,yes,yes,yes,yes,yes
+proposed low exposure (amendment 1),own rows,Xilinx,2010Q1 (2009-06-27),40,2019Q4 (2019-03-30),2014Q4,pass,2019-05-10,2019-06-03,yes,40,yes,yes,yes,yes,yes

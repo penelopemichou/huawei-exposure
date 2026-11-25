@@ -28,7 +28,7 @@ PROJECT = Path(__file__).resolve().parent.parent
 STAGE_A = PROJECT / "data" / "raw" / "stage_a"
 OUT = PROJECT / "data" / "raw" / "filing_lists"
 LOG = OUT / "request_log.csv"
-LIMITS = {"cree": 2, "random10": 10, "lists80": 100, "revenue7": 7, "stagec": 45, "stagec2": 4}
+LIMITS = {"cree": 2, "random10": 10, "lists80": 100, "revenue7": 7, "stagec": 45, "stagec2": 4, "amend12": 12}
 STAGEC_MAX_FILE_MB, STAGEC_MAX_TOTAL_MB = 10, 200   # approved 25 Nov 2026
 # revenue7 (approved 25 Nov 2026): XBRL companyfacts of the 6 exposed firms and Intel
 REVENUE7 = {"NeoPhotonics": "0001227025", "Inphi": "0001160958", "Lumentum": "0001633978", "Qorvo": "0001604778",
@@ -130,6 +130,7 @@ def submissions(purpose, cik):
 
 
 def main():
+    global STAGEC_MAX_TOTAL_MB
     OUT.mkdir(parents=True, exist_ok=True)
     job = sys.argv[1]
     if job == "cree":
@@ -165,13 +166,20 @@ def main():
                                OUT / "companyfacts" / f"CIK{cik}.json", total)
         print(f"done: run total {total:.1f} MB")
     elif job == "stagec2":   # Broadcom's predecessors (approved 25 Nov 2026): 10 MB per file, 20 MB in total
-        global STAGEC_MAX_TOTAL_MB
         STAGEC_MAX_TOTAL_MB = 20
         total = 0.0
         for cik in ["0001649338", "0001441634"]:          # Broadcom Ltd (now Broadcom Pte. Ltd.), Avago Technologies
             total = get_capped("stagec2", f"https://data.sec.gov/submissions/CIK{cik}.json",
                                OUT / "submissions" / f"CIK{cik}.json", total)
             total = get_capped("stagec2", f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
+                               OUT / "companyfacts" / f"CIK{cik}.json", total)
+        print(f"done: run total {total:.1f} MB")
+    elif job == "amend12":   # amendment-1 candidates (approved 25 Nov 2026): 10 MB per file, 60 MB in total
+        STAGEC_MAX_TOTAL_MB = 60
+        ciks = [r["cik"] for r in csv.DictReader((PROJECT / "results" / "amendment1_candidates.csv").open())]
+        total = 0.0
+        for cik in ciks:
+            total = get_capped("amend12", f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
                                OUT / "companyfacts" / f"CIK{cik}.json", total)
         print(f"done: run total {total:.1f} MB")
     elif job == "older":

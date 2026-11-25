@@ -47,3 +47,11 @@ Mellanox, Kulicke & Soffa.
 **Frozen on 25 Nov 2026** by Penelope, before any forecast. Last commit before freezing: `86a8e28`.
 
 Primary test at h = 1: 5 exposed firms (NeoPhotonics, Inphi, Qorvo, Micron, Finisar) and 14 primary donors, 19 firms in all.
+
+## Amendment 1 (approved 25 Nov 2026, before any forecast)
+
+Details and evidence: `notes/frozen-lists-amendment-1.md`. Reason: placement gap found before any forecast; no outcome seen. The lists above are unchanged; this section adds to them.
+
+- **Low exposure, added (12):** ON Semiconductor, MaxLinear, Semtech, Synaptics, Cypress (no h = 4), DSP Group, Applied Optoelectronics, Cree/Wolfspeed, and, flagged "FY2020 10-K only": Marvell, Cirrus Logic, Alpha & Omega (indirect), Xilinx. **Low exposure now: 16 firms.**
+- **Listed, not compared (7):** Flex, TTM Technologies, Applied Materials, CEVA, Xperi, NXP (fails history and origin), SiTime (fails history).
+- **Unchanged:** exposed firms, primary and sensitivity donors, and the primary test (5 exposed vs 14 primary donors).
