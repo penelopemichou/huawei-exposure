@@ -86,6 +86,13 @@ Did US suppliers with more **disclosed** Huawei exposure miss their revenue fore
 - **Primary and secondary comparison** (decided 24 Nov 2026): firms with fewer than 20 quarters before the origin, or whose origin quarter was filed after the 65-day cutoff, are excluded from the PRIMARY comparison and listed in a SECONDARY table. Fewer than 4 primary exposed firms → tell Penelope before Session 3. Details: `notes/screening-plan.md`.
 - **Written:** `notes/screening-plan.md` (the empty exposure table, the five known numbers marked "to verify", the nine candidates marked "from memory") and `notes/donor-rule.md` (the donor rule and its limits).
 
+## Session 2 log (24 Nov 2026), not committed
+
+- Session 1 committed (`41c03ce`, 6 files) after the private-word check (8 words, self-test first, 0 hits).
+- **Stage A done** with Penelope's "yes": 42 of 60 requests, about 3.5 MB, no 10-Ks. New scripts `src/sec_stage_a.py` (downloads; reads `SEC_USER_AGENT` from `.env`; hard stop at 60) and `src/read_stage_a.py` (reads only). Results: `notes/stage-a-results.md`.
+- **The search gives no sentences**, so no hit is labelled yet. Labels and the "Customer A" table need Stage B.
+- Provisional: 12 of the 14 mention Huawei in a fiscal 2018/2019 10-K. **Intel and Xilinx are not named.** 22 other donor-code firms mention Huawei; 685 listed entries do not.
+
 ## Session 2 plan (proposed 24 Nov 2026, waits for "yes")
 
 Three stages, each small. Stage B and C file names are only known after Stage A, so each later stage is shown again, file by file, and needs its own "yes".
@@ -100,7 +107,28 @@ Three stages, each small. Stage B and C file names are only known after Stage A,
 
 CIKs from memory, to confirm in A1: Qorvo 0001604778, Skyworks 0000004127, Lumentum 0001633978, NeoPhotonics 0001227025, Inphi 0001160958, Acacia 0001651235, Finisar 0001094739, II-VI 0000820318, MACOM 0001493594, Xilinx 0000743988, Micron 0000723125, Intel 0000050863, Qualcomm 0000804328, Broadcom Inc. 0001730168. Broadcom Inc. replaced Broadcom Ltd in 2018, so like Google/Alphabet in Project 2 it may need the old entity too.
 
+**Stage A2: 2018 revenue for all filers (drafted 25 Nov 2026; separate "yes"; 5 requests, about 1.5–3 MB)**
+
+The SEC "frames" files list one value per filer for one XBRL tag and one period, for **all** filers at once. Joining them to the 714 industry-list entries by CIK gives each firm's 2018 revenue without 700 requests. One file per revenue tag Project 2 uses:
+
+| # | File (saved as) | Source | Size (estimate) |
+|---|---|---|---|
+| 1 | `frames/Revenues_CY2018.json` | `https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2018.json` | 0.5–1.5 MB |
+| 2 | `frames/RevenueFromContractWithCustomerExcludingAssessedTax_CY2018.json` | `https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2018.json` | 0.5–1.5 MB |
+| 3 | `frames/RevenueFromContractWithCustomerIncludingAssessedTax_CY2018.json` | `https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2018.json` | 0.02–0.2 MB |
+| 4 | `frames/SalesRevenueNet_CY2018.json` | `https://data.sec.gov/api/xbrl/frames/us-gaap/SalesRevenueNet/USD/CY2018.json` | 0.02–0.3 MB |
+| 5 | `frames/SalesRevenueGoodsNet_CY2018.json` | `https://data.sec.gov/api/xbrl/frames/us-gaap/SalesRevenueGoodsNet/USD/CY2018.json` | 0.02–0.2 MB |
+
+Saved under `data/raw/stage_a/frames/` (gitignored). Limits of these files:
+
+- **"CY2018" is calendar 2018.** The SEC puts in each filer's annual value that best fits calendar 2018, so for a firm with another fiscal year end it is the nearest fiscal year. That is good enough for a size filter, not for forecasting.
+- **Values are the latest filed** (after restatements), not first reported. Again fine for a size filter.
+- **A firm can be missing from all five files.** That happens if it used another tag, reported under IFRS or filed no XBRL. Such firms are counted and listed as "no 2018 revenue found", not dropped silently.
+- **Next step:** checking first filing and origin filing for the firms that pass needs one revenue file per firm (Stage C, `companyfacts`). The number of firms is known only after A2. If it is more than 60, Penelope is asked first.
+
 **Stage B: the 10-Ks (separate "yes", after Stage A)**
+
+**Drafted 25 Nov 2026 in `notes/stage-b-plan.md`:** B1 = 31 documents (14 firms, FY2018 and FY2019, Xilinx FY2020, 2 10-K/As), B2 = 34 documents (22 firms). Each stage needs its own "yes". The older text below is the first outline.
 
 - The main 10-K document for fiscal 2018 and fiscal 2019 for each of the 14 firms: up to 28 files, `https://www.sec.gov/Archives/edgar/data/<CIK>/<accession>/<main document>.htm`, about 1–4 MB each, **about 30–100 MB in all**. Exact names come from A1.
 - Donors: only the 10-Ks that A2 shows mention "Huawei" are downloaded and read. A 10-K with no Huawei mention needs no download; the search result is the evidence.

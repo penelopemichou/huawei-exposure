@@ -1,28 +1,66 @@
 # Donor rule: who counts as a supplier with no Huawei exposure?
 
-Written on 24 Nov 2026 (Session 1), before any SEC file was downloaded and before any forecast. Do not change it after seeing results. If something turns out to be impossible, write the change and the reason here, dated, before running anything.
+Written on 24 Nov 2026 (Session 1). **Reworded on 25 Nov 2026 to a label-based test**, before any 10-K was read and before any forecast. Do not change it after seeing results. If something turns out to be impossible, write the change and the reason here, dated, before running anything.
 
 ## The rule in one sentence
 
-A **donor** is a semiconductor or electronic-components company that files a 10-K with the SEC and whose 10-K **does not name Huawei as a 10 %+ customer** in fiscal 2018 or fiscal 2019.
+A **donor** is a semiconductor or electronic-components 10-K filer whose FY2018 and FY2019 10-Ks contain **no sentence saying that its own sales depend on Huawei**, directly or indirectly.
 
-## What each part means
+## Labels (one per sentence, from `results/huawei_sentences.csv`)
 
-- **Semiconductor or electronic-components company:** the industry code (SIC) the SEC gives the filer. **Proposed, to confirm before Session 2:** SIC 3674 (semiconductors and related devices) and SIC 3672, 3677, 3678, 3679 (printed circuit boards, coils and transformers, connectors, other electronic components). The code is read from the SEC's own company record, not chosen by hand.
-- **Files a 10-K:** a US annual report. Foreign filers using 20-F or 40-F are left out, so all firms follow the same reporting rules.
-- **Fiscal 2018 or fiscal 2019:** the firm's own fiscal years, as named in its 10-K. Both 10-Ks are read. Naming Huawei at 10 %+ in either year makes the firm "exposed", not a donor.
-- **Names Huawei as a 10 %+ customer:** the 10-K gives Huawei (or HiSilicon, Huawei's chip unit) a share of revenue of 10 % or more, anywhere in the filing (customer section, risk factors, the segment or concentration note).
-- **Same data rules as the exposed firms:** a donor goes through the same Project 2 code, the same 65-day rule, the same 20-quarter start, the same origin rule (its last fiscal quarter ending before 16 May 2019) and h = 1–4. A donor with fewer than 20 quarters before the origin, or whose origin quarter was filed after the 65-day cutoff, goes to the SECONDARY table exactly as an exposed firm would (see `screening-plan.md`, "Primary and secondary comparison"; wording updated 24 Nov 2026, before any download). A missing target quarter is recorded, not filled in.
+Every sentence that mentions Huawei or HiSilicon (Huawei's chip unit) gets one label:
+
+| Label | Meaning | Example (made up) |
+|---|---|---|
+| customer with % | names Huawei as the firm's customer and gives its share of revenue | "Huawei accounted for 15% of our revenue" |
+| customer without % | names Huawei as the firm's customer (or licensee) with no share | "our customers include Huawei" |
+| indirect | says the firm's sales depend on Huawei through others | "our customers sell to Huawei"; "contract manufacturers that build for Huawei" |
+| competitor/other | mentions Huawei but says nothing about the firm's own sales | "we compete with Huawei"; a general description of the Entity List |
+| unclear | cannot be told from the sentence | (no guessing; Penelope decides) |
+
+"Sales" includes licence revenue. A sentence saying that restrictions on selling to Huawei hurt **the firm's** business is about its own sales, so it gets a customer or indirect label, not "other".
+
+## Groups
+
+| Group | Who |
+|---|---|
+| **Exposed** | a sentence labelled *customer with %* gives Huawei a share of **10 % or more** in FY2018 or FY2019 |
+| **Low exposure** | Huawei is named as a customer with a share **below 10 %** (and never 10 %+) |
+| **Out of the donor group** | any sentence labelled *customer without %* or *indirect* (and not exposed or low exposure). Listed with the reason |
+| **Donor** | passes the donor filter below: no mention at all, or only *competitor/other* mentions |
+
+A sentence labelled *unclear* keeps the firm **out of the donor group until Penelope decides**. It is listed with the sentence.
+
+## Donor filter (all five must hold; drafted 25 Nov 2026, not applied yet)
+
+1. **Industry:** SEC industry code 3674, 3672, 3677, 3678 or 3679.
+2. **Size:** 2018 revenue of at least $100 million, from the SEC frames files for calendar 2018 (Stage A2). If a firm has more than one revenue tag, the largest value is used.
+3. **History:** first 10-K or 10-Q filed in 2014 or earlier.
+4. **Origin on time:** the origin quarter (last fiscal quarter ending before 16 May 2019) was filed by the cutoff (quarter end + 65 days).
+5. **Label test:** in its FY2018 and FY2019 10-Ks (and 10-K/As), no sentence labelled customer with %, customer without %, indirect or unclear.
+   - A firm with **no search hit** passes without reading. The full-text search is the evidence.
+   - A firm **with a hit** passes only after its documents are read and labelled. It never passes by default.
+
+**Every firm that passes is included.** No firm is added or removed by hand.
+
+**Later filings can only move a firm OUT of the donor group, never in.** A later 10-K (filed up to 31 Dec 2020, the end of the full-text search; for example Xilinx FY2020) with a sentence labelled customer with %, customer without %, indirect or unclear moves the firm out, using the same label test. A firm moved out this way is not counted as exposed. Nothing filed later can make a firm a donor or change an exposed firm's group.
+
+**Dropped-donor list:** every firm that fails any criterion is listed in `results/dropped_donors.csv` with the criterion it failed and, for criterion 5 or a later filing, the document and sentence.
+
+**Donors and exposed firms are treated differently on history and timing.** A donor failing criterion 3 or 4 is simply not a donor. An exposed firm failing the 20-quarter or 65-day check goes to the SECONDARY table. The pre-flight table (PROGRESS.md) still applies to every firm that passes the filter. Criterion 3 is a first screen; the pre-flight table checks the 20 quarters exactly.
+
+**What this means for the reading:** every firm with the donor codes that has a "Huawei" hit in FY2018–FY2019 (B2), **or only in a later 10-K up to 2020**, must be read before it can be a donor. The later-only firms are not in the B2 list yet.
 
 ## The plain limit: hidden exposure below 10 %
 
-US accounting rules require a company to report a customer only when it reaches **10 % of revenue**. Below that line, a firm can sell a lot to Huawei and say nothing. **So "donor" means "did not disclose 10 %+ Huawei exposure", not "had no Huawei exposure".** Some donors probably did sell to Huawei. If they did, the gap between exposed firms and donors is **smaller** than the true gap, because part of the effect sits inside the comparison group too.
+US accounting rules require a company to report a customer only when it reaches **10 % of revenue**. Below that line, a firm can sell a lot to Huawei and say nothing. **So "donor" means "did not say its sales depend on Huawei", not "had no Huawei exposure".** Some donors probably did sell to Huawei. If they did, the gap between exposed firms and donors is **smaller** than the true gap.
 
-The same 10 % line causes three more blind spots:
+The same reporting rules cause more blind spots:
 
-1. **Named below 10 %.** A 10-K can mention Huawei with a smaller share (for example in the risk factors). Under this rule such a firm is still a donor. Each one found is listed, so its effect on the result can be seen.
-2. **Unnamed big customers.** Some 10-Ks say "Customer A, 12 %" without a name. If Customer A was Huawei, the rule wrongly counts the firm as a donor. Each such firm is listed as "unnamed 10 %+ customer".
-3. **Sales through others.** Chips sold to Huawei through a distributor or a contract manufacturer show up under that middleman's name, not Huawei's.
+1. **Unnamed big customers.** Some 10-Ks say "Customer A, 12 %" without a name. If Customer A was Huawei, the test cannot see it. Each such firm is listed as "unnamed 10 %+ customer" (from the 10 %-customer paragraphs).
+2. **Sales through others that are never described.** If a 10-K never says that its customers sell to Huawei, the indirect label cannot catch it.
+3. **Words the search does not find.** The full-text search looks for "Huawei" only. A firm that writes only "HiSilicon" and has no "Huawei" hit is not read. (In the documents that *are* read, HiSilicon sentences are extracted too.)
+4. **Filings after 2020** are not searched.
 
 ## Other limits (why this is descriptive only)
 
@@ -31,8 +69,13 @@ The same 10 % line causes three more blind spots:
 - **Few exposed firms** (about five to ten). One firm can move the whole result, so each firm is shown on its own as well as in the group.
 - **The yardstick lines come from non-chip companies.** None of the 20 Project 2 companies makes chips or electronic components, and chip revenue swings more. So the 90th-percentile lines are a rough guide only. The main comparison is exposed firms against donors, both of them chip firms.
 
-## Decisions for Penelope before Session 2 (not decided here)
+## Settled (25 Nov 2026)
 
-- Confirm the SIC codes above, or change them.
-- Whether firms that name Huawei **below** 10 % stay donors (the rule as written: yes) or are shown separately as well.
-- Whether firms with an **unnamed** 10 %+ customer stay donors (the rule as written: yes) or are shown separately as well.
+- Industry codes: the five above.
+- Firms naming Huawei as a customer below 10 % are **not** donors; they form the "low exposure" group.
+- Firms with only competitor/other mentions **are** donors.
+
+
+## Still open (Penelope's decision)
+
+- Firms with an unnamed 10 %+ customer ("Customer A"). As written, they stay donors, because the test cannot see who the customer is. They are listed separately either way.
